@@ -1,5 +1,14 @@
 {
   "tasks": {
+    "biome": {
+      "name": "biome",
+      "description": "Runs Biome against the codebase",
+      "steps": [
+        {
+          "exec": "biome check --write .projenrc.ts src test"
+        }
+      ]
+    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -98,6 +107,9 @@
       "steps": [
         {
           "exec": "ts-node --project tsconfig.dev.json .projenrc.ts"
+        },
+        {
+          "spawn": "parse-biome-types"
         }
       ]
     },
@@ -122,25 +134,12 @@
         }
       ]
     },
-    "eslint": {
-      "name": "eslint",
-      "description": "Runs eslint against the codebase",
-      "env": {
-        "ESLINT_USE_FLAT_CONFIG": "false"
-      },
-      "steps": [
-        {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
-          "receiveArgs": true
-        }
-      ]
-    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
       "steps": [
         {
-          "exec": "yarn install --check-files"
+          "exec": "npm install"
         }
       ]
     },
@@ -149,7 +148,7 @@
       "description": "Install project dependencies using frozen lockfile",
       "steps": [
         {
-          "exec": "yarn install --check-files --frozen-lockfile"
+          "exec": "npm ci"
         }
       ]
     },
@@ -182,6 +181,14 @@
       "steps": [
         {
           "exec": "jsii-pacmak -v --target js"
+        }
+      ]
+    },
+    "parse-biome-types": {
+      "name": "parse-biome-types",
+      "steps": [
+        {
+          "exec": "npx --package=json-schema-to-typescript json2ts --input node_modules/@biomejs/biome/configuration_schema.json --output src/biome-configuration.ts"
         }
       ]
     },
@@ -231,20 +238,29 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --updateSnapshot",
+          "exec": "vitest run",
           "receiveArgs": true
         },
         {
-          "spawn": "eslint"
+          "spawn": "biome"
+        }
+      ]
+    },
+    "test:update": {
+      "name": "test:update",
+      "steps": [
+        {
+          "exec": "vitest --update",
+          "receiveArgs": true
         }
       ]
     },
     "test:watch": {
       "name": "test:watch",
-      "description": "Run jest in watch mode",
       "steps": [
         {
-          "exec": "jest --watch"
+          "exec": "vitest watch",
+          "receiveArgs": true
         }
       ]
     },
@@ -273,13 +289,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,projen,ts-jest,ts-node,typescript"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@nikovirtala/projen-vitest,@types/node,jsii-diff,jsii-pacmak,json-schema-to-typescript,jsonc-parse,projen,ts-node,typescript,@biomejs/biome,constructs"
         },
         {
-          "exec": "yarn install --check-files"
+          "exec": "npm install"
         },
         {
-          "exec": "yarn upgrade @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest ts-node typescript"
+          "exec": "npm update @biomejs/biome @nikovirtala/projen-vitest @types/node commit-and-tag-version constructs jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii json-schema-to-typescript jsonc-parse projen ts-node typescript vitest @vitest/coverage-v8"
         },
         {
           "exec": "npx projen"
