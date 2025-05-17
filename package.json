@@ -17,7 +17,6 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
-    "parse-biome-types": "npx projen parse-biome-types",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -36,7 +35,6 @@
     "organization": false
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
     "@nikovirtala/projen-vitest": "^2.0.27",
     "@types/node": "^22.15.18",
     "@vitest/coverage-v8": "^3",
@@ -48,20 +46,21 @@
     "jsii-pacmak": "^1.112.0",
     "jsii-rosetta": "~5.8.0",
     "json-schema-to-typescript": "^15.0.4",
-    "jsonc-parse": "^1.5.5",
     "projen": "^0.92.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "vitest": "^3"
   },
   "peerDependencies": {
-    "@biomejs/biome": "^1.9.4",
     "constructs": "^10.4.2",
     "projen": "^0.92.5"
   },
   "dependencies": {
     "@biomejs/biome": "^1.9.4"
   },
+  "bundledDependencies": [
+    "@biomejs/biome"
+  ],
   "main": "lib/index.js",
   "license": "MIT",
   "publishConfig": {

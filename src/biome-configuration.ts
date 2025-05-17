@@ -5,77 +5,79 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type RuleAssistConfiguration = "on" | "off";
-export type StringSet = string[];
-export type IndentStyle = "tab" | "space";
-export type IndentWidth = number;
-export type LineEnding = "lf" | "crlf" | "cr";
+export type IRuleAssistConfiguration = "on" | "off";
+export type IStringSet = string[];
+export type IIndentStyle = "tab" | "space";
+export type IIndentWidth = number;
+export type ILineEnding = "lf" | "crlf" | "cr";
 /**
  * Validated value for the `line_width` formatter options
  *
  * The allowed range of values is 1..=320
  */
-export type LineWidth = number;
-export type QuoteStyle = "double" | "single";
-export type AttributePosition = "auto" | "multiline";
-export type BracketSpacing = boolean;
-export type ArrowParentheses = "always" | "asNeeded";
-export type QuoteProperties = "asNeeded" | "preserve";
-export type Semicolons = "always" | "asNeeded";
+export type ILineWidth = number;
+export type IQuoteStyle = "double" | "single";
+export type IAttributePosition = "auto" | "multiline";
+export type IBracketSpacing = boolean;
+export type IArrowParentheses = "always" | "asNeeded";
+export type IQuoteProperties = "asNeeded" | "preserve";
+export type ISemicolons = "always" | "asNeeded";
 /**
  * Print trailing commas wherever possible in multi-line comma-separated syntactic structures.
  */
-export type TrailingCommas = "all" | "es5" | "none";
+export type ITrailingCommas = "all" | "es5" | "none";
 /**
  * Indicates the type of runtime or transformation used for interpreting JSX.
  */
-export type JsxRuntime = "transparent" | "reactClassic";
-export type TrailingCommas2 = "none" | "all";
-export type RuleFixConfiguration = RulePlainConfiguration | RuleWithFixNoOptions;
-export type RulePlainConfiguration = "warn" | "error" | "info" | "off";
+export type IJsxRuntime = "transparent" | "reactClassic";
+export type ITrailingCommas2 = "none" | "all";
+export type IRuleFixConfiguration = IRulePlainConfiguration | IRuleWithFixNoOptions;
+export type IRulePlainConfiguration = "warn" | "error" | "info" | "off";
 /**
  * Used to identify the kind of code action emitted by a rule
  */
-export type FixKind = "none" | "safe" | "unsafe";
-export type AllowDomainConfiguration = RulePlainConfiguration | RuleWithAllowDomainOptions;
-export type NoLabelWithoutControlConfiguration = RulePlainConfiguration | RuleWithNoLabelWithoutControlOptions;
-export type RuleConfiguration = RulePlainConfiguration | RuleWithNoOptions;
-export type ValidAriaRoleConfiguration = RulePlainConfiguration | RuleWithValidAriaRoleOptions;
-export type ComplexityConfiguration = RulePlainConfiguration | RuleWithComplexityOptions;
-export type UseExhaustiveDependenciesConfiguration = RulePlainConfiguration | RuleWithUseExhaustiveDependenciesOptions;
-export type StableHookResult = boolean | [number, ...number[]];
-export type DeprecatedHooksConfiguration = RulePlainConfiguration | RuleWithDeprecatedHooksOptions;
-export type UseImportExtensionsConfiguration = RulePlainConfiguration | RuleWithUseImportExtensionsOptions;
-export type RestrictedImportsConfiguration = RulePlainConfiguration | RuleWithRestrictedImportsOptions;
-export type NoRestrictedTypesConfiguration = RulePlainConfiguration | RuleWithNoRestrictedTypesOptions;
-export type CustomRestrictedType = string | CustomRestrictedTypeOptions;
-export type NoSecretsConfiguration = RulePlainConfiguration | RuleWithNoSecretsOptions;
-export type UseComponentExportOnlyModulesConfiguration =
-  | RulePlainConfiguration
-  | RuleWithUseComponentExportOnlyModulesOptions;
-export type ConsistentMemberAccessibilityConfiguration =
-  | RulePlainConfiguration
-  | RuleWithConsistentMemberAccessibilityOptions;
-export type Accessibility = "noPublic" | "explicit" | "none";
-export type UtilityClassSortingConfiguration = RulePlainConfiguration | RuleWithUtilityClassSortingOptions;
-export type UseValidAutocompleteConfiguration = RulePlainConfiguration | RuleWithUseValidAutocompleteOptions;
-export type RestrictedGlobalsConfiguration = RulePlainConfiguration | RuleWithRestrictedGlobalsOptions;
-export type ConsistentArrayTypeConfiguration = RulePlainConfiguration | RuleWithConsistentArrayTypeOptions;
-export type ConsistentArrayType = "shorthand" | "generic";
-export type FilenamingConventionConfiguration = RulePlainConfiguration | RuleWithFilenamingConventionOptions;
+export type IFixKind = "none" | "safe" | "unsafe";
+export type IAllowDomainConfiguration = IRulePlainConfiguration | IRuleWithAllowDomainOptions;
+export type INoLabelWithoutControlConfiguration = IRulePlainConfiguration | IRuleWithNoLabelWithoutControlOptions;
+export type IRuleConfiguration = IRulePlainConfiguration | IRuleWithNoOptions;
+export type IValidAriaRoleConfiguration = IRulePlainConfiguration | IRuleWithValidAriaRoleOptions;
+export type IComplexityConfiguration = IRulePlainConfiguration | IRuleWithComplexityOptions;
+export type IUseExhaustiveDependenciesConfiguration =
+  | IRulePlainConfiguration
+  | IRuleWithUseExhaustiveDependenciesOptions;
+export type IStableHookResult = boolean | number[];
+export type IDeprecatedHooksConfiguration = IRulePlainConfiguration | IRuleWithDeprecatedHooksOptions;
+export type IUseImportExtensionsConfiguration = IRulePlainConfiguration | IRuleWithUseImportExtensionsOptions;
+export type IRestrictedImportsConfiguration = IRulePlainConfiguration | IRuleWithRestrictedImportsOptions;
+export type INoRestrictedTypesConfiguration = IRulePlainConfiguration | IRuleWithNoRestrictedTypesOptions;
+export type ICustomRestrictedType = string | ICustomRestrictedTypeOptions;
+export type INoSecretsConfiguration = IRulePlainConfiguration | IRuleWithNoSecretsOptions;
+export type IUseComponentExportOnlyModulesConfiguration =
+  | IRulePlainConfiguration
+  | IRuleWithUseComponentExportOnlyModulesOptions;
+export type IConsistentMemberAccessibilityConfiguration =
+  | IRulePlainConfiguration
+  | IRuleWithConsistentMemberAccessibilityOptions;
+export type IAccessibility = "noPublic" | "explicit" | "none";
+export type IUtilityClassSortingConfiguration = IRulePlainConfiguration | IRuleWithUtilityClassSortingOptions;
+export type IUseValidAutocompleteConfiguration = IRulePlainConfiguration | IRuleWithUseValidAutocompleteOptions;
+export type IRestrictedGlobalsConfiguration = IRulePlainConfiguration | IRuleWithRestrictedGlobalsOptions;
+export type IConsistentArrayTypeConfiguration = IRulePlainConfiguration | IRuleWithConsistentArrayTypeOptions;
+export type IConsistentArrayType = "shorthand" | "generic";
+export type IFilenamingConventionConfiguration = IRulePlainConfiguration | IRuleWithFilenamingConventionOptions;
 /**
  * Supported cases for file names.
  */
-export type FilenameCase = "camelCase" | "export" | "kebab-case" | "PascalCase" | "snake_case";
-export type FilenameCases = FilenameCase[];
-export type NamingConventionConfiguration = RulePlainConfiguration | RuleWithNamingConventionOptions;
+export type IFilenameCase = "camelCase" | "export" | "kebab-case" | "PascalCase" | "snake_case";
+export type IFilenameCases = IFilenameCase[];
+export type INamingConventionConfiguration = IRulePlainConfiguration | IRuleWithNamingConventionOptions;
 /**
  * Supported cases.
  */
-export type Format = "camelCase" | "CONSTANT_CASE" | "PascalCase" | "snake_case";
-export type Formats = Format[];
-export type Regex = string;
-export type Kind =
+export type IFormat = "camelCase" | "CONSTANT_CASE" | "PascalCase" | "snake_case";
+export type IFormats = IFormat[];
+export type IRegex = string;
+export type IKind =
   | (
       | "class"
       | "enum"
@@ -116,748 +118,748 @@ export type Kind =
   | "typeProperty"
   | "typeSetter"
   | "typeMethod";
-export type RestrictedModifier = "abstract" | "private" | "protected" | "readonly" | "static";
-export type Modifiers = RestrictedModifier[];
-export type Scope = "any" | "global";
-export type NoConsoleConfiguration = RulePlainConfiguration | RuleWithNoConsoleOptions;
-export type NoDoubleEqualsConfiguration = RulePlainConfiguration | RuleWithNoDoubleEqualsOptions;
-export type Overrides = OverridePattern[];
-export type VcsClientKind = "git";
+export type IRestrictedModifier = "abstract" | "private" | "protected" | "readonly" | "static";
+export type IModifiers = IRestrictedModifier[];
+export type IScope = "any" | "global";
+export type INoConsoleConfiguration = IRulePlainConfiguration | IRuleWithNoConsoleOptions;
+export type INoDoubleEqualsConfiguration = IRulePlainConfiguration | IRuleWithNoDoubleEqualsOptions;
+export type IOverrides = IOverridePattern[];
+export type IVcsClientKind = "git";
 
 /**
  * The configuration that is contained inside the file `biome.json`
  */
-export interface Configuration {
+export interface IConfiguration {
   /**
    * A field for the [JSON schema](https://json-schema.org/) specification
    */
-  $schema?: string | null;
+  //$schema?: string;
   /**
    * Specific configuration for assists
    */
-  assists?: AssistsConfiguration | null;
+  assists?: IAssistsConfiguration;
   /**
    * Specific configuration for the Css language
    */
-  css?: CssConfiguration | null;
+  css?: ICssConfiguration;
   /**
    * A list of paths to other JSON files, used to extends the current configuration.
    */
-  extends?: StringSet | null;
+  extends?: IStringSet;
   /**
    * The configuration of the filesystem
    */
-  files?: FilesConfiguration | null;
+  files?: IFilesConfiguration;
   /**
    * The configuration of the formatter
    */
-  formatter?: FormatterConfiguration | null;
+  formatter?: IFormatterConfiguration;
   /**
    * Specific configuration for the GraphQL language
    */
-  graphql?: GraphqlConfiguration | null;
+  graphql?: IGraphqlConfiguration;
   /**
    * Specific configuration for the JavaScript language
    */
-  javascript?: JavascriptConfiguration | null;
+  javascript?: IJavascriptConfiguration;
   /**
    * Specific configuration for the Json language
    */
-  json?: JsonConfiguration | null;
+  json?: IJsonConfiguration;
   /**
    * The configuration for the linter
    */
-  linter?: LinterConfiguration | null;
+  linter?: ILinterConfiguration;
   /**
    * The configuration of the import sorting
    */
-  organizeImports?: OrganizeImports | null;
+  organizeImports?: IOrganizeImports;
   /**
    * A list of granular patterns that should be applied only to a sub set of files
    */
-  overrides?: Overrides | null;
+  overrides?: IOverrides;
   /**
    * The configuration of the VCS integration
    */
-  vcs?: VcsConfiguration | null;
+  vcs?: IVcsConfiguration;
 }
-export interface AssistsConfiguration {
+export interface IAssistsConfiguration {
   /**
    * Whether Biome should fail in CLI if the assists were not applied to the code.
    */
-  actions?: Actions | null;
+  actions?: IActions;
   /**
    * Whether Biome should enable assists via LSP.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * A list of Unix shell style patterns. The formatter will ignore files/folders that will match these patterns.
    */
-  ignore?: StringSet | null;
+  ignore?: IStringSet;
   /**
    * A list of Unix shell style patterns. The formatter will include files/folders that will match these patterns.
    */
-  include?: StringSet | null;
+  include?: IStringSet;
 }
-export interface Actions {
-  source?: Source | null;
+export interface IActions {
+  source?: ISource;
 }
 /**
  * A list of rules that belong to this group
  */
-export interface Source {
+export interface ISource {
   /**
    * Enforce props sorting in JSX elements.
    */
-  sortJsxProps?: RuleAssistConfiguration | null;
+  sortJsxProps?: IRuleAssistConfiguration;
   /**
    * Sorts the keys of a JSON object in natural order
    */
-  useSortedKeys?: RuleAssistConfiguration | null;
+  useSortedKeys?: IRuleAssistConfiguration;
 }
 /**
  * Options applied to CSS files
  */
-export interface CssConfiguration {
+export interface ICssConfiguration {
   /**
    * CSS assists options
    */
-  assists?: CssAssists | null;
+  assists?: ICssAssists;
   /**
    * CSS formatter options
    */
-  formatter?: CssFormatter | null;
+  formatter?: ICssFormatter;
   /**
    * CSS linter options
    */
-  linter?: CssLinter | null;
+  linter?: ICssLinter;
   /**
    * CSS parsing options
    */
-  parser?: CssParser | null;
+  parser?: ICssParser;
 }
 /**
  * Options that changes how the CSS assists behaves
  */
-export interface CssAssists {
+export interface ICssAssists {
   /**
    * Control the assists for CSS files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
 /**
  * Options that changes how the CSS formatter behaves
  */
-export interface CssFormatter {
+export interface ICssFormatter {
   /**
    * Control the formatter for CSS (and its super languages) files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * The indent style applied to CSS (and its super languages) files.
    */
-  indentStyle?: IndentStyle | null;
+  indentStyle?: IIndentStyle;
   /**
    * The size of the indentation applied to CSS (and its super languages) files. Default to 2.
    */
-  indentWidth?: IndentWidth | null;
+  indentWidth?: IIndentWidth;
   /**
    * The type of line ending applied to CSS (and its super languages) files.
    */
-  lineEnding?: LineEnding | null;
+  lineEnding?: ILineEnding;
   /**
    * What's the max width of a line applied to CSS (and its super languages) files. Defaults to 80.
    */
-  lineWidth?: LineWidth | null;
+  lineWidth?: ILineWidth;
   /**
    * The type of quotes used in CSS code. Defaults to double.
    */
-  quoteStyle?: QuoteStyle | null;
+  quoteStyle?: IQuoteStyle;
 }
 /**
  * Options that changes how the CSS linter behaves
  */
-export interface CssLinter {
+export interface ICssLinter {
   /**
    * Control the linter for CSS files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
 /**
  * Options that changes how the CSS parser behaves
  */
-export interface CssParser {
+export interface ICssParser {
   /**
    * Allow comments to appear on incorrect lines in `.css` files
    */
-  allowWrongLineComments?: boolean | null;
+  allowWrongLineComments?: boolean;
   /**
    * Enables parsing of CSS Modules specific features.
    */
-  cssModules?: boolean | null;
+  cssModules?: boolean;
 }
 /**
  * The configuration of the filesystem
  */
-export interface FilesConfiguration {
+export interface IFilesConfiguration {
   /**
    * A list of Unix shell style patterns. Biome will ignore files/folders that will match these patterns.
    */
-  ignore?: StringSet | null;
+  ignore?: IStringSet;
   /**
    * Tells Biome to not emit diagnostics when handling files that doesn't know
    */
-  ignoreUnknown?: boolean | null;
+  ignoreUnknown?: boolean;
   /**
    * A list of Unix shell style patterns. Biome will handle only those files/folders that will match these patterns.
    */
-  include?: StringSet | null;
+  include?: IStringSet;
   /**
    * The maximum allowed size for source code files in bytes. Files above this limit will be ignored for performance reasons. Defaults to 1 MiB
    */
-  maxSize?: number | null;
+  maxSize?: number;
 }
 /**
  * Generic options applied to all files
  */
-export interface FormatterConfiguration {
+export interface IFormatterConfiguration {
   /**
    * The attribute position style in HTMLish languages. By default auto.
    */
-  attributePosition?: AttributePosition | null;
+  attributePosition?: IAttributePosition;
   /**
    * Whether to insert spaces around brackets in object literals. Defaults to true.
    */
-  bracketSpacing?: BracketSpacing | null;
-  enabled?: boolean | null;
+  bracketSpacing?: IBracketSpacing;
+  enabled?: boolean;
   /**
    * Stores whether formatting should be allowed to proceed if a given file has syntax errors
    */
-  formatWithErrors?: boolean | null;
+  formatWithErrors?: boolean;
   /**
    * A list of Unix shell style patterns. The formatter will ignore files/folders that will match these patterns.
    */
-  ignore?: StringSet | null;
+  ignore?: IStringSet;
   /**
    * A list of Unix shell style patterns. The formatter will include files/folders that will match these patterns.
    */
-  include?: StringSet | null;
+  include?: IStringSet;
   /**
    * The size of the indentation, 2 by default (deprecated, use `indent-width`)
    */
-  indentSize?: IndentWidth | null;
+  indentSize?: IIndentWidth;
   /**
    * The indent style.
    */
-  indentStyle?: IndentStyle | null;
+  indentStyle?: IIndentStyle;
   /**
    * The size of the indentation, 2 by default
    */
-  indentWidth?: IndentWidth | null;
+  indentWidth?: IIndentWidth;
   /**
    * The type of line ending.
    */
-  lineEnding?: LineEnding | null;
+  lineEnding?: ILineEnding;
   /**
    * What's the max width of a line. Defaults to 80.
    */
-  lineWidth?: LineWidth | null;
+  lineWidth?: ILineWidth;
   /**
    * Use any `.editorconfig` files to configure the formatter. Configuration in `biome.json` will override `.editorconfig` configuration. Default: false.
    */
-  useEditorconfig?: boolean | null;
+  useEditorconfig?: boolean;
 }
 /**
  * Options applied to GraphQL files
  */
-export interface GraphqlConfiguration {
+export interface IGraphqlConfiguration {
   /**
    * GraphQL formatter options
    */
-  formatter?: GraphqlFormatter | null;
-  linter?: GraphqlLinter | null;
+  formatter?: IGraphqlFormatter;
+  linter?: IGraphqlLinter;
 }
 /**
  * Options that changes how the GraphQL formatter behaves
  */
-export interface GraphqlFormatter {
+export interface IGraphqlFormatter {
   /**
    * Whether to insert spaces around brackets in object literals. Defaults to true.
    */
-  bracketSpacing?: BracketSpacing | null;
+  bracketSpacing?: IBracketSpacing;
   /**
    * Control the formatter for GraphQL files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * The indent style applied to GraphQL files.
    */
-  indentStyle?: IndentStyle | null;
+  indentStyle?: IIndentStyle;
   /**
    * The size of the indentation applied to GraphQL files. Default to 2.
    */
-  indentWidth?: IndentWidth | null;
+  indentWidth?: IIndentWidth;
   /**
    * The type of line ending applied to GraphQL files.
    */
-  lineEnding?: LineEnding | null;
+  lineEnding?: ILineEnding;
   /**
    * What's the max width of a line applied to GraphQL files. Defaults to 80.
    */
-  lineWidth?: LineWidth | null;
+  lineWidth?: ILineWidth;
   /**
    * The type of quotes used in GraphQL code. Defaults to double.
    */
-  quoteStyle?: QuoteStyle | null;
+  quoteStyle?: IQuoteStyle;
 }
 /**
  * Options that changes how the GraphQL linter behaves
  */
-export interface GraphqlLinter {
+export interface IGraphqlLinter {
   /**
    * Control the formatter for GraphQL files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
 /**
  * A set of options applied to the JavaScript files
  */
-export interface JavascriptConfiguration {
+export interface IJavascriptConfiguration {
   /**
    * Assists options
    */
-  assists?: JavascriptAssists | null;
+  assists?: IJavascriptAssists;
   /**
    * Formatting options
    */
-  formatter?: JavascriptFormatter | null;
+  formatter?: IJavascriptFormatter;
   /**
    * A list of global bindings that should be ignored by the analyzers
    *
    * If defined here, they should not emit diagnostics.
    */
-  globals?: StringSet | null;
+  globals?: IStringSet;
   /**
    * Indicates the type of runtime or transformation used for interpreting JSX.
    */
-  jsxRuntime?: JsxRuntime | null;
+  jsxRuntime?: IJsxRuntime;
   /**
    * Linter options
    */
-  linter?: JavascriptLinter | null;
-  organizeImports?: JavascriptOrganizeImports | null;
+  linter?: IJavascriptLinter;
+  organizeImports?: IJavascriptOrganizeImports;
   /**
    * Parsing options
    */
-  parser?: JavascriptParser | null;
+  parser?: IJavascriptParser;
 }
 /**
  * Linter options specific to the JavaScript linter
  */
-export interface JavascriptAssists {
+export interface IJavascriptAssists {
   /**
    * Control the linter for JavaScript (and its super languages) files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
 /**
  * Formatting options specific to the JavaScript files
  */
-export interface JavascriptFormatter {
+export interface IJavascriptFormatter {
   /**
    * Whether to add non-necessary parentheses to arrow functions. Defaults to "always".
    */
-  arrowParentheses?: ArrowParentheses | null;
+  arrowParentheses?: IArrowParentheses;
   /**
    * The attribute position style in jsx elements. Defaults to auto.
    */
-  attributePosition?: AttributePosition | null;
+  attributePosition?: IAttributePosition;
   /**
    * Whether to hug the closing bracket of multiline HTML/JSX tags to the end of the last line, rather than being alone on the following line. Defaults to false.
    */
-  bracketSameLine?: boolean | null;
+  bracketSameLine?: boolean;
   /**
    * Whether to insert spaces around brackets in object literals. Defaults to true.
    */
-  bracketSpacing?: BracketSpacing | null;
+  bracketSpacing?: IBracketSpacing;
   /**
    * Control the formatter for JavaScript (and its super languages) files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * The size of the indentation applied to JavaScript (and its super languages) files. Default to 2.
    */
-  indentSize?: IndentWidth | null;
+  indentSize?: IIndentWidth;
   /**
    * The indent style applied to JavaScript (and its super languages) files.
    */
-  indentStyle?: IndentStyle | null;
+  indentStyle?: IIndentStyle;
   /**
    * The size of the indentation applied to JavaScript (and its super languages) files. Default to 2.
    */
-  indentWidth?: IndentWidth | null;
+  indentWidth?: IIndentWidth;
   /**
    * The type of quotes used in JSX. Defaults to double.
    */
-  jsxQuoteStyle?: QuoteStyle | null;
+  jsxQuoteStyle?: IQuoteStyle;
   /**
    * The type of line ending applied to JavaScript (and its super languages) files.
    */
-  lineEnding?: LineEnding | null;
+  lineEnding?: ILineEnding;
   /**
    * What's the max width of a line applied to JavaScript (and its super languages) files. Defaults to 80.
    */
-  lineWidth?: LineWidth | null;
+  lineWidth?: ILineWidth;
   /**
    * When properties in objects are quoted. Defaults to asNeeded.
    */
-  quoteProperties?: QuoteProperties | null;
+  quoteProperties?: IQuoteProperties;
   /**
    * The type of quotes used in JavaScript code. Defaults to double.
    */
-  quoteStyle?: QuoteStyle | null;
+  quoteStyle?: IQuoteStyle;
   /**
    * Whether the formatter prints semicolons for all statements or only in for statements where it is necessary because of ASI.
    */
-  semicolons?: Semicolons | null;
+  semicolons?: ISemicolons;
   /**
    * Print trailing commas wherever possible in multi-line comma-separated syntactic structures. Defaults to "all".
    */
-  trailingComma?: TrailingCommas | null;
+  trailingComma?: ITrailingCommas;
   /**
    * Print trailing commas wherever possible in multi-line comma-separated syntactic structures. Defaults to "all".
    */
-  trailingCommas?: TrailingCommas | null;
+  trailingCommas?: ITrailingCommas;
 }
 /**
  * Linter options specific to the JavaScript linter
  */
-export interface JavascriptLinter {
+export interface IJavascriptLinter {
   /**
    * Control the linter for JavaScript (and its super languages) files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
-export interface JavascriptOrganizeImports {}
+export interface IJavascriptOrganizeImports {}
 /**
  * Options that changes how the JavaScript parser behaves
  */
-export interface JavascriptParser {
+export interface IJavascriptParser {
   /**
    * It enables the experimental and unsafe parsing of parameter decorators
    *
    * These decorators belong to an old proposal, and they are subject to change.
    */
-  unsafeParameterDecoratorsEnabled?: boolean | null;
+  unsafeParameterDecoratorsEnabled?: boolean;
 }
 /**
  * Options applied to JSON files
  */
-export interface JsonConfiguration {
+export interface IJsonConfiguration {
   /**
    * Assists options
    */
-  assists?: JsonAssists | null;
+  assists?: IJsonAssists;
   /**
    * Formatting options
    */
-  formatter?: JsonFormatter | null;
+  formatter?: IJsonFormatter;
   /**
    * Linting options
    */
-  linter?: JsonLinter | null;
+  linter?: IJsonLinter;
   /**
    * Parsing options
    */
-  parser?: JsonParser | null;
+  parser?: IJsonParser;
 }
 /**
  * Linter options specific to the JSON linter
  */
-export interface JsonAssists {
+export interface IJsonAssists {
   /**
    * Control the linter for JSON (and its super languages) files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
-export interface JsonFormatter {
+export interface IJsonFormatter {
   /**
    * Control the formatter for JSON (and its super languages) files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * The size of the indentation applied to JSON (and its super languages) files. Default to 2.
    */
-  indentSize?: IndentWidth | null;
+  indentSize?: IIndentWidth;
   /**
    * The indent style applied to JSON (and its super languages) files.
    */
-  indentStyle?: IndentStyle | null;
+  indentStyle?: IIndentStyle;
   /**
    * The size of the indentation applied to JSON (and its super languages) files. Default to 2.
    */
-  indentWidth?: IndentWidth | null;
+  indentWidth?: IIndentWidth;
   /**
    * The type of line ending applied to JSON (and its super languages) files.
    */
-  lineEnding?: LineEnding | null;
+  lineEnding?: ILineEnding;
   /**
    * What's the max width of a line applied to JSON (and its super languages) files. Defaults to 80.
    */
-  lineWidth?: LineWidth | null;
+  lineWidth?: ILineWidth;
   /**
    * Print trailing commas wherever possible in multi-line comma-separated syntactic structures. Defaults to "none".
    */
-  trailingCommas?: TrailingCommas2 | null;
+  trailingCommas?: ITrailingCommas2;
 }
 /**
  * Linter options specific to the JSON linter
  */
-export interface JsonLinter {
+export interface IJsonLinter {
   /**
    * Control the linter for JSON (and its super languages) files.
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
 /**
  * Options that changes how the JSON parser behaves
  */
-export interface JsonParser {
+export interface IJsonParser {
   /**
    * Allow parsing comments in `.json` files
    */
-  allowComments?: boolean | null;
+  allowComments?: boolean;
   /**
    * Allow parsing trailing commas in `.json` files
    */
-  allowTrailingCommas?: boolean | null;
+  allowTrailingCommas?: boolean;
 }
-export interface LinterConfiguration {
+export interface ILinterConfiguration {
   /**
    * if `false`, it disables the feature and the linter won't be executed. `true` by default
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * A list of Unix shell style patterns. The formatter will ignore files/folders that will match these patterns.
    */
-  ignore?: StringSet | null;
+  ignore?: IStringSet;
   /**
    * A list of Unix shell style patterns. The formatter will include files/folders that will match these patterns.
    */
-  include?: StringSet | null;
+  include?: IStringSet;
   /**
    * List of rules
    */
-  rules?: Rules | null;
+  rules?: IRules;
 }
-export interface Rules {
-  a11y?: A11Y | null;
+export interface IRules {
+  a11y?: IA11y;
   /**
    * It enables ALL rules. The rules that belong to `nursery` won't be enabled.
    */
-  all?: boolean | null;
-  complexity?: Complexity | null;
-  correctness?: Correctness | null;
-  nursery?: Nursery | null;
-  performance?: Performance | null;
+  all?: boolean;
+  complexity?: IComplexity;
+  correctness?: ICorrectness;
+  nursery?: INursery;
+  performance?: IPerformance;
   /**
    * It enables the lint rules recommended by Biome. `true` by default.
    */
-  recommended?: boolean | null;
-  security?: Security | null;
-  style?: Style | null;
-  suspicious?: Suspicious | null;
+  recommended?: boolean;
+  security?: ISecurity;
+  style?: IStyle;
+  suspicious?: ISuspicious;
 }
 /**
  * A list of rules that belong to this group
  */
-export interface A11Y {
+export interface IA11y {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Enforce that the accessKey attribute is not used on any HTML element.
    */
-  noAccessKey?: RuleFixConfiguration | null;
+  noAccessKey?: IRuleFixConfiguration;
   /**
    * Enforce that aria-hidden="true" is not set on focusable elements.
    */
-  noAriaHiddenOnFocusable?: RuleFixConfiguration | null;
+  noAriaHiddenOnFocusable?: IRuleFixConfiguration;
   /**
    * Enforce that elements that do not support ARIA roles, states, and properties do not have those attributes.
    */
-  noAriaUnsupportedElements?: RuleFixConfiguration | null;
+  noAriaUnsupportedElements?: IRuleFixConfiguration;
   /**
    * Enforce that autoFocus prop is not used on elements.
    */
-  noAutofocus?: RuleFixConfiguration | null;
+  noAutofocus?: IRuleFixConfiguration;
   /**
    * Disallow target="_blank" attribute without rel="noreferrer"
    */
-  noBlankTarget?: AllowDomainConfiguration | null;
+  noBlankTarget?: IAllowDomainConfiguration;
   /**
    * Enforces that no distracting elements are used.
    */
-  noDistractingElements?: RuleFixConfiguration | null;
+  noDistractingElements?: IRuleFixConfiguration;
   /**
    * The scope prop should be used only on \<th> elements.
    */
-  noHeaderScope?: RuleFixConfiguration | null;
+  noHeaderScope?: IRuleFixConfiguration;
   /**
    * Enforce that non-interactive ARIA roles are not assigned to interactive HTML elements.
    */
-  noInteractiveElementToNoninteractiveRole?: RuleFixConfiguration | null;
+  noInteractiveElementToNoninteractiveRole?: IRuleFixConfiguration;
   /**
    * Enforce that a label element or component has a text label and an associated input.
    */
-  noLabelWithoutControl?: NoLabelWithoutControlConfiguration | null;
+  noLabelWithoutControl?: INoLabelWithoutControlConfiguration;
   /**
    * Enforce that interactive ARIA roles are not assigned to non-interactive HTML elements.
    */
-  noNoninteractiveElementToInteractiveRole?: RuleFixConfiguration | null;
+  noNoninteractiveElementToInteractiveRole?: IRuleFixConfiguration;
   /**
    * Enforce that tabIndex is not assigned to non-interactive HTML elements.
    */
-  noNoninteractiveTabindex?: RuleFixConfiguration | null;
+  noNoninteractiveTabindex?: IRuleFixConfiguration;
   /**
    * Prevent the usage of positive integers on tabIndex property
    */
-  noPositiveTabindex?: RuleFixConfiguration | null;
+  noPositiveTabindex?: IRuleFixConfiguration;
   /**
    * Enforce img alt prop does not contain the word "image", "picture", or "photo".
    */
-  noRedundantAlt?: RuleConfiguration | null;
+  noRedundantAlt?: IRuleConfiguration;
   /**
    * Enforce explicit role property is not the same as implicit/default role property on an element.
    */
-  noRedundantRoles?: RuleFixConfiguration | null;
+  noRedundantRoles?: IRuleFixConfiguration;
   /**
    * Enforces the usage of the title element for the svg element.
    */
-  noSvgWithoutTitle?: RuleConfiguration | null;
+  noSvgWithoutTitle?: IRuleConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
   /**
    * Enforce that all elements that require alternative text have meaningful information to relay back to the end user.
    */
-  useAltText?: RuleConfiguration | null;
+  useAltText?: IRuleConfiguration;
   /**
    * Enforce that anchors have content and that the content is accessible to screen readers.
    */
-  useAnchorContent?: RuleFixConfiguration | null;
+  useAnchorContent?: IRuleFixConfiguration;
   /**
    * Enforce that tabIndex is assigned to non-interactive HTML elements with aria-activedescendant.
    */
-  useAriaActivedescendantWithTabindex?: RuleFixConfiguration | null;
+  useAriaActivedescendantWithTabindex?: IRuleFixConfiguration;
   /**
    * Enforce that elements with ARIA roles must have all required ARIA attributes for that role.
    */
-  useAriaPropsForRole?: RuleConfiguration | null;
+  useAriaPropsForRole?: IRuleConfiguration;
   /**
    * Enforces the usage of the attribute type for the element button
    */
-  useButtonType?: RuleConfiguration | null;
+  useButtonType?: IRuleConfiguration;
   /**
    * Elements with an interactive role and interaction handlers must be focusable.
    */
-  useFocusableInteractive?: RuleConfiguration | null;
+  useFocusableInteractive?: IRuleConfiguration;
   /**
    * Disallow a missing generic family keyword within font families.
    */
-  useGenericFontNames?: RuleConfiguration | null;
+  useGenericFontNames?: IRuleConfiguration;
   /**
    * Enforce that heading elements (h1, h2, etc.) have content and that the content is accessible to screen readers. Accessible means that it is not hidden using the aria-hidden prop.
    */
-  useHeadingContent?: RuleConfiguration | null;
+  useHeadingContent?: IRuleConfiguration;
   /**
    * Enforce that html element has lang attribute.
    */
-  useHtmlLang?: RuleConfiguration | null;
+  useHtmlLang?: IRuleConfiguration;
   /**
    * Enforces the usage of the attribute title for the element iframe.
    */
-  useIframeTitle?: RuleConfiguration | null;
+  useIframeTitle?: IRuleConfiguration;
   /**
    * Enforce onClick is accompanied by at least one of the following: onKeyUp, onKeyDown, onKeyPress.
    */
-  useKeyWithClickEvents?: RuleConfiguration | null;
+  useKeyWithClickEvents?: IRuleConfiguration;
   /**
    * Enforce onMouseOver / onMouseOut are accompanied by onFocus / onBlur.
    */
-  useKeyWithMouseEvents?: RuleConfiguration | null;
+  useKeyWithMouseEvents?: IRuleConfiguration;
   /**
    * Enforces that audio and video elements must have a track for captions.
    */
-  useMediaCaption?: RuleConfiguration | null;
+  useMediaCaption?: IRuleConfiguration;
   /**
    * It detects the use of role attributes in JSX elements and suggests using semantic elements instead.
    */
-  useSemanticElements?: RuleConfiguration | null;
+  useSemanticElements?: IRuleConfiguration;
   /**
    * Enforce that all anchors are valid, and they are navigable elements.
    */
-  useValidAnchor?: RuleConfiguration | null;
+  useValidAnchor?: IRuleConfiguration;
   /**
    * Ensures that ARIA properties aria-* are all valid.
    */
-  useValidAriaProps?: RuleFixConfiguration | null;
+  useValidAriaProps?: IRuleFixConfiguration;
   /**
    * Elements with ARIA roles must use a valid, non-abstract ARIA role.
    */
-  useValidAriaRole?: ValidAriaRoleConfiguration | null;
+  useValidAriaRole?: IValidAriaRoleConfiguration;
   /**
    * Enforce that ARIA state and property values are valid.
    */
-  useValidAriaValues?: RuleConfiguration | null;
+  useValidAriaValues?: IRuleConfiguration;
   /**
    * Ensure that the attribute passed to the lang attribute is a correct ISO language and/or country.
    */
-  useValidLang?: RuleConfiguration | null;
+  useValidLang?: IRuleConfiguration;
 }
-export interface RuleWithFixNoOptions {
+export interface IRuleWithFixNoOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
 }
-export interface RuleWithAllowDomainOptions {
+export interface IRuleWithAllowDomainOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: AllowDomainOptions;
+  options?: IAllowDomainOptions;
 }
-export interface AllowDomainOptions {
+export interface IAllowDomainOptions {
   /**
    * List of domains to allow `target="_blank"` without `rel="noreferrer"`
    */
   allowDomains?: string[];
 }
-export interface RuleWithNoLabelWithoutControlOptions {
+export interface IRuleWithNoLabelWithoutControlOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: NoLabelWithoutControlOptions;
+  options?: INoLabelWithoutControlOptions;
 }
-export interface NoLabelWithoutControlOptions {
+export interface INoLabelWithoutControlOptions {
   /**
    * Array of component names that should be considered the same as an `input` element.
    */
@@ -871,185 +873,185 @@ export interface NoLabelWithoutControlOptions {
    */
   labelComponents?: string[];
 }
-export interface RuleWithNoOptions {
+export interface IRuleWithNoOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
 }
-export interface RuleWithValidAriaRoleOptions {
+export interface IRuleWithValidAriaRoleOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: ValidAriaRoleOptions;
+  options?: IValidAriaRoleOptions;
 }
-export interface ValidAriaRoleOptions {
+export interface IValidAriaRoleOptions {
   allowInvalidRoles?: string[];
   ignoreNonDom?: boolean;
 }
 /**
  * A list of rules that belong to this group
  */
-export interface Complexity {
+export interface IComplexity {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Disallow primitive type aliases and misleading types.
    */
-  noBannedTypes?: RuleFixConfiguration | null;
+  noBannedTypes?: IRuleFixConfiguration;
   /**
    * Disallow empty type parameters in type aliases and interfaces.
    */
-  noEmptyTypeParameters?: RuleConfiguration | null;
+  noEmptyTypeParameters?: IRuleConfiguration;
   /**
    * Disallow functions that exceed a given Cognitive Complexity score.
    */
-  noExcessiveCognitiveComplexity?: ComplexityConfiguration | null;
+  noExcessiveCognitiveComplexity?: IComplexityConfiguration;
   /**
    * This rule enforces a maximum depth to nested describe() in test files.
    */
-  noExcessiveNestedTestSuites?: RuleConfiguration | null;
+  noExcessiveNestedTestSuites?: IRuleConfiguration;
   /**
    * Disallow unnecessary boolean casts
    */
-  noExtraBooleanCast?: RuleFixConfiguration | null;
+  noExtraBooleanCast?: IRuleFixConfiguration;
   /**
    * Prefer for...of statement instead of Array.forEach.
    */
-  noForEach?: RuleConfiguration | null;
+  noForEach?: IRuleConfiguration;
   /**
    * Disallow unclear usage of consecutive space characters in regular expression literals
    */
-  noMultipleSpacesInRegularExpressionLiterals?: RuleFixConfiguration | null;
+  noMultipleSpacesInRegularExpressionLiterals?: IRuleFixConfiguration;
   /**
    * This rule reports when a class has no non-static members, such as for a class used exclusively as a static namespace.
    */
-  noStaticOnlyClass?: RuleConfiguration | null;
+  noStaticOnlyClass?: IRuleConfiguration;
   /**
    * Disallow this and super in static contexts.
    */
-  noThisInStatic?: RuleFixConfiguration | null;
+  noThisInStatic?: IRuleFixConfiguration;
   /**
    * Disallow unnecessary catch clauses.
    */
-  noUselessCatch?: RuleFixConfiguration | null;
+  noUselessCatch?: IRuleFixConfiguration;
   /**
    * Disallow unnecessary constructors.
    */
-  noUselessConstructor?: RuleFixConfiguration | null;
+  noUselessConstructor?: IRuleFixConfiguration;
   /**
    * Disallow empty exports that don't change anything in a module file.
    */
-  noUselessEmptyExport?: RuleFixConfiguration | null;
+  noUselessEmptyExport?: IRuleFixConfiguration;
   /**
    * Disallow unnecessary fragments
    */
-  noUselessFragments?: RuleFixConfiguration | null;
+  noUselessFragments?: IRuleFixConfiguration;
   /**
    * Disallow unnecessary labels.
    */
-  noUselessLabel?: RuleFixConfiguration | null;
+  noUselessLabel?: IRuleFixConfiguration;
   /**
    * Disallow unnecessary nested block statements.
    */
-  noUselessLoneBlockStatements?: RuleFixConfiguration | null;
+  noUselessLoneBlockStatements?: IRuleFixConfiguration;
   /**
    * Disallow renaming import, export, and destructured assignments to the same name.
    */
-  noUselessRename?: RuleFixConfiguration | null;
+  noUselessRename?: IRuleFixConfiguration;
   /**
    * Disallow unnecessary concatenation of string or template literals.
    */
-  noUselessStringConcat?: RuleFixConfiguration | null;
+  noUselessStringConcat?: IRuleFixConfiguration;
   /**
    * Disallow useless case in switch statements.
    */
-  noUselessSwitchCase?: RuleFixConfiguration | null;
+  noUselessSwitchCase?: IRuleFixConfiguration;
   /**
    * Disallow ternary operators when simpler alternatives exist.
    */
-  noUselessTernary?: RuleFixConfiguration | null;
+  noUselessTernary?: IRuleFixConfiguration;
   /**
    * Disallow useless this aliasing.
    */
-  noUselessThisAlias?: RuleFixConfiguration | null;
+  noUselessThisAlias?: IRuleFixConfiguration;
   /**
    * Disallow using any or unknown as type constraint.
    */
-  noUselessTypeConstraint?: RuleFixConfiguration | null;
+  noUselessTypeConstraint?: IRuleFixConfiguration;
   /**
    * Disallow initializing variables to undefined.
    */
-  noUselessUndefinedInitialization?: RuleFixConfiguration | null;
+  noUselessUndefinedInitialization?: IRuleFixConfiguration;
   /**
    * Disallow the use of void operators, which is not a familiar operator.
    */
-  noVoid?: RuleConfiguration | null;
+  noVoid?: IRuleConfiguration;
   /**
    * Disallow with statements in non-strict contexts.
    */
-  noWith?: RuleConfiguration | null;
+  noWith?: IRuleConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
   /**
    * Use arrow functions over function expressions.
    */
-  useArrowFunction?: RuleFixConfiguration | null;
+  useArrowFunction?: IRuleFixConfiguration;
   /**
    * Use Date.now() to get the number of milliseconds since the Unix Epoch.
    */
-  useDateNow?: RuleFixConfiguration | null;
+  useDateNow?: IRuleFixConfiguration;
   /**
    * Promotes the use of .flatMap() when map().flat() are used together.
    */
-  useFlatMap?: RuleFixConfiguration | null;
+  useFlatMap?: IRuleFixConfiguration;
   /**
    * Enforce the usage of a literal access to properties over computed property access.
    */
-  useLiteralKeys?: RuleFixConfiguration | null;
+  useLiteralKeys?: IRuleFixConfiguration;
   /**
    * Enforce using concise optional chain instead of chained logical expressions.
    */
-  useOptionalChain?: RuleFixConfiguration | null;
+  useOptionalChain?: IRuleFixConfiguration;
   /**
    * Enforce the use of the regular expression literals instead of the RegExp constructor if possible.
    */
-  useRegexLiterals?: RuleFixConfiguration | null;
+  useRegexLiterals?: IRuleFixConfiguration;
   /**
    * Disallow number literal object member names which are not base10 or uses underscore as separator
    */
-  useSimpleNumberKeys?: RuleFixConfiguration | null;
+  useSimpleNumberKeys?: IRuleFixConfiguration;
   /**
    * Discard redundant terms from logical expressions.
    */
-  useSimplifiedLogicExpression?: RuleFixConfiguration | null;
+  useSimplifiedLogicExpression?: IRuleFixConfiguration;
 }
-export interface RuleWithComplexityOptions {
+export interface IRuleWithComplexityOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: ComplexityOptions;
+  options?: IComplexityOptions;
 }
 /**
  * Options for the rule `noExcessiveCognitiveComplexity`.
  */
-export interface ComplexityOptions {
+export interface IComplexityOptions {
   /**
    * The maximum complexity score that we allow. Anything higher is considered excessive.
    */
@@ -1058,246 +1060,246 @@ export interface ComplexityOptions {
 /**
  * A list of rules that belong to this group
  */
-export interface Correctness {
+export interface ICorrectness {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Prevent passing of children as props.
    */
-  noChildrenProp?: RuleConfiguration | null;
+  noChildrenProp?: IRuleConfiguration;
   /**
    * Prevents from having const variables being re-assigned.
    */
-  noConstAssign?: RuleFixConfiguration | null;
+  noConstAssign?: IRuleFixConfiguration;
   /**
    * Disallow constant expressions in conditions
    */
-  noConstantCondition?: RuleConfiguration | null;
+  noConstantCondition?: IRuleConfiguration;
   /**
    * Disallow the use of Math.min and Math.max to clamp a value where the result itself is constant.
    */
-  noConstantMathMinMaxClamp?: RuleFixConfiguration | null;
+  noConstantMathMinMaxClamp?: IRuleFixConfiguration;
   /**
    * Disallow returning a value from a constructor.
    */
-  noConstructorReturn?: RuleConfiguration | null;
+  noConstructorReturn?: IRuleConfiguration;
   /**
    * Disallow empty character classes in regular expression literals.
    */
-  noEmptyCharacterClassInRegex?: RuleConfiguration | null;
+  noEmptyCharacterClassInRegex?: IRuleConfiguration;
   /**
    * Disallows empty destructuring patterns.
    */
-  noEmptyPattern?: RuleConfiguration | null;
+  noEmptyPattern?: IRuleConfiguration;
   /**
    * Disallow to use unnecessary callback on flatMap.
    */
-  noFlatMapIdentity?: RuleFixConfiguration | null;
+  noFlatMapIdentity?: IRuleFixConfiguration;
   /**
    * Disallow calling global object properties as functions
    */
-  noGlobalObjectCalls?: RuleConfiguration | null;
+  noGlobalObjectCalls?: IRuleConfiguration;
   /**
    * Disallow function and var declarations that are accessible outside their block.
    */
-  noInnerDeclarations?: RuleConfiguration | null;
+  noInnerDeclarations?: IRuleConfiguration;
   /**
    * Ensure that builtins are correctly instantiated.
    */
-  noInvalidBuiltinInstantiation?: RuleFixConfiguration | null;
+  noInvalidBuiltinInstantiation?: IRuleFixConfiguration;
   /**
    * Prevents the incorrect use of super() inside classes. It also checks whether a call super() is missing from classes that extends other constructors.
    */
-  noInvalidConstructorSuper?: RuleConfiguration | null;
+  noInvalidConstructorSuper?: IRuleConfiguration;
   /**
    * Disallow non-standard direction values for linear gradient functions.
    */
-  noInvalidDirectionInLinearGradient?: RuleConfiguration | null;
+  noInvalidDirectionInLinearGradient?: IRuleConfiguration;
   /**
    * Disallows invalid named grid areas in CSS Grid Layouts.
    */
-  noInvalidGridAreas?: RuleConfiguration | null;
+  noInvalidGridAreas?: IRuleConfiguration;
   /**
    * Disallow new operators with global non-constructor functions.
    */
-  noInvalidNewBuiltin?: RuleFixConfiguration | null;
+  noInvalidNewBuiltin?: IRuleFixConfiguration;
   /**
    * Disallow the use of @import at-rules in invalid positions.
    */
-  noInvalidPositionAtImportRule?: RuleConfiguration | null;
+  noInvalidPositionAtImportRule?: IRuleConfiguration;
   /**
    * Disallow the use of variables and function parameters before their declaration
    */
-  noInvalidUseBeforeDeclaration?: RuleConfiguration | null;
+  noInvalidUseBeforeDeclaration?: IRuleConfiguration;
   /**
    * Disallow new operators with the Symbol object.
    */
-  noNewSymbol?: RuleFixConfiguration | null;
+  noNewSymbol?: IRuleFixConfiguration;
   /**
    * Forbid the use of Node.js builtin modules.
    */
-  noNodejsModules?: RuleConfiguration | null;
+  noNodejsModules?: IRuleConfiguration;
   /**
    * Disallow \8 and \9 escape sequences in string literals.
    */
-  noNonoctalDecimalEscape?: RuleFixConfiguration | null;
+  noNonoctalDecimalEscape?: IRuleFixConfiguration;
   /**
    * Disallow literal numbers that lose precision
    */
-  noPrecisionLoss?: RuleConfiguration | null;
+  noPrecisionLoss?: IRuleConfiguration;
   /**
    * Prevent the usage of the return value of React.render.
    */
-  noRenderReturnValue?: RuleConfiguration | null;
+  noRenderReturnValue?: IRuleConfiguration;
   /**
    * Disallow assignments where both sides are exactly the same.
    */
-  noSelfAssign?: RuleConfiguration | null;
+  noSelfAssign?: IRuleConfiguration;
   /**
    * Disallow returning a value from a setter
    */
-  noSetterReturn?: RuleConfiguration | null;
+  noSetterReturn?: IRuleConfiguration;
   /**
    * Disallow comparison of expressions modifying the string case with non-compliant value.
    */
-  noStringCaseMismatch?: RuleFixConfiguration | null;
+  noStringCaseMismatch?: IRuleFixConfiguration;
   /**
    * Disallow lexical declarations in switch clauses.
    */
-  noSwitchDeclarations?: RuleFixConfiguration | null;
+  noSwitchDeclarations?: IRuleFixConfiguration;
   /**
    * Disallow the use of dependencies that aren't specified in the package.json.
    */
-  noUndeclaredDependencies?: RuleConfiguration | null;
+  noUndeclaredDependencies?: IRuleConfiguration;
   /**
    * Prevents the usage of variables that haven't been declared inside the document.
    */
-  noUndeclaredVariables?: RuleConfiguration | null;
+  noUndeclaredVariables?: IRuleConfiguration;
   /**
    * Disallow unknown CSS value functions.
    */
-  noUnknownFunction?: RuleConfiguration | null;
+  noUnknownFunction?: IRuleConfiguration;
   /**
    * Disallow unknown media feature names.
    */
-  noUnknownMediaFeatureName?: RuleConfiguration | null;
+  noUnknownMediaFeatureName?: IRuleConfiguration;
   /**
    * Disallow unknown properties.
    */
-  noUnknownProperty?: RuleConfiguration | null;
+  noUnknownProperty?: IRuleConfiguration;
   /**
    * Disallow unknown CSS units.
    */
-  noUnknownUnit?: RuleConfiguration | null;
+  noUnknownUnit?: IRuleConfiguration;
   /**
    * Disallow unmatchable An+B selectors.
    */
-  noUnmatchableAnbSelector?: RuleConfiguration | null;
+  noUnmatchableAnbSelector?: IRuleConfiguration;
   /**
    * Avoid using unnecessary continue.
    */
-  noUnnecessaryContinue?: RuleFixConfiguration | null;
+  noUnnecessaryContinue?: IRuleFixConfiguration;
   /**
    * Disallow unreachable code
    */
-  noUnreachable?: RuleConfiguration | null;
+  noUnreachable?: IRuleConfiguration;
   /**
    * Ensures the super() constructor is called exactly once on every code  path in a class constructor before this is accessed if the class has a superclass
    */
-  noUnreachableSuper?: RuleConfiguration | null;
+  noUnreachableSuper?: IRuleConfiguration;
   /**
    * Disallow control flow statements in finally blocks.
    */
-  noUnsafeFinally?: RuleConfiguration | null;
+  noUnsafeFinally?: IRuleConfiguration;
   /**
    * Disallow the use of optional chaining in contexts where the undefined value is not allowed.
    */
-  noUnsafeOptionalChaining?: RuleConfiguration | null;
+  noUnsafeOptionalChaining?: IRuleConfiguration;
   /**
    * Disallow unused function parameters.
    */
-  noUnusedFunctionParameters?: RuleFixConfiguration | null;
+  noUnusedFunctionParameters?: IRuleFixConfiguration;
   /**
    * Disallow unused imports.
    */
-  noUnusedImports?: RuleFixConfiguration | null;
+  noUnusedImports?: IRuleFixConfiguration;
   /**
    * Disallow unused labels.
    */
-  noUnusedLabels?: RuleFixConfiguration | null;
+  noUnusedLabels?: IRuleFixConfiguration;
   /**
    * Disallow unused private class members
    */
-  noUnusedPrivateClassMembers?: RuleFixConfiguration | null;
+  noUnusedPrivateClassMembers?: IRuleFixConfiguration;
   /**
    * Disallow unused variables.
    */
-  noUnusedVariables?: RuleFixConfiguration | null;
+  noUnusedVariables?: IRuleFixConfiguration;
   /**
    * This rules prevents void elements (AKA self-closing elements) from having children.
    */
-  noVoidElementsWithChildren?: RuleFixConfiguration | null;
+  noVoidElementsWithChildren?: IRuleFixConfiguration;
   /**
    * Disallow returning a value from a function with the return type 'void'
    */
-  noVoidTypeReturn?: RuleConfiguration | null;
+  noVoidTypeReturn?: IRuleConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
   /**
    * Disallow Array constructors.
    */
-  useArrayLiterals?: RuleFixConfiguration | null;
+  useArrayLiterals?: IRuleFixConfiguration;
   /**
    * Enforce all dependencies are correctly specified in a React hook.
    */
-  useExhaustiveDependencies?: UseExhaustiveDependenciesConfiguration | null;
+  useExhaustiveDependencies?: IUseExhaustiveDependenciesConfiguration;
   /**
    * Enforce that all React hooks are being called from the Top Level component functions.
    */
-  useHookAtTopLevel?: DeprecatedHooksConfiguration | null;
+  useHookAtTopLevel?: IDeprecatedHooksConfiguration;
   /**
    * Enforce file extensions for relative imports.
    */
-  useImportExtensions?: UseImportExtensionsConfiguration | null;
+  useImportExtensions?: IUseImportExtensionsConfiguration;
   /**
    * Require calls to isNaN() when checking for NaN.
    */
-  useIsNan?: RuleFixConfiguration | null;
+  useIsNan?: IRuleFixConfiguration;
   /**
    * Disallow missing key props in iterators/collection literals.
    */
-  useJsxKeyInIterable?: RuleConfiguration | null;
+  useJsxKeyInIterable?: IRuleConfiguration;
   /**
    * Enforce "for" loop update clause moving the counter in the right direction.
    */
-  useValidForDirection?: RuleConfiguration | null;
+  useValidForDirection?: IRuleConfiguration;
   /**
    * Require generator functions to contain yield.
    */
-  useYield?: RuleConfiguration | null;
+  useYield?: IRuleConfiguration;
 }
-export interface RuleWithUseExhaustiveDependenciesOptions {
+export interface IRuleWithUseExhaustiveDependenciesOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: UseExhaustiveDependenciesOptions;
+  options?: IUseExhaustiveDependenciesOptions;
 }
 /**
  * Options for the rule `useExhaustiveDependencies`
  */
-export interface UseExhaustiveDependenciesOptions {
+export interface IUseExhaustiveDependenciesOptions {
   /**
    * List of hooks of which the dependencies should be validated.
    */
-  hooks?: Hook[];
+  hooks?: IHook[];
   /**
    * Whether to report an error when a hook has no dependencies array.
    */
@@ -1307,19 +1309,19 @@ export interface UseExhaustiveDependenciesOptions {
    */
   reportUnnecessaryDependencies?: boolean;
 }
-export interface Hook {
+export interface IHook {
   /**
    * The "position" of the closure function, starting from zero.
    *
    * For example, for React's `useEffect()` hook, the closure index is 0.
    */
-  closureIndex?: number | null;
+  closureIndex?: number;
   /**
    * The "position" of the array of dependencies, starting from zero.
    *
    * For example, for React's `useEffect()` hook, the dependencies index is 1.
    */
-  dependenciesIndex?: number | null;
+  dependenciesIndex?: number;
   /**
    * The name of the hook.
    */
@@ -1331,45 +1333,45 @@ export interface Hook {
    *
    * For example, for React's `useRef()` hook the value would be `true`, while for `useState()` it would be `[1]`.
    */
-  stableResult?: StableHookResult | null;
+  stableResult?: IStableHookResult;
 }
-export interface RuleWithDeprecatedHooksOptions {
+export interface IRuleWithDeprecatedHooksOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: DeprecatedHooksOptions;
+  options?: IDeprecatedHooksOptions;
 }
 /**
  * Options for the `useHookAtTopLevel` rule have been deprecated, since we now use the React hook naming convention to determine whether a function is a hook.
  */
-export interface DeprecatedHooksOptions {}
-export interface RuleWithUseImportExtensionsOptions {
+export interface IDeprecatedHooksOptions {}
+export interface IRuleWithUseImportExtensionsOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: UseImportExtensionsOptions;
+  options?: IUseImportExtensionsOptions;
 }
-export interface UseImportExtensionsOptions {
+export interface IUseImportExtensionsOptions {
   /**
    * A map of custom import extension mappings, where the key is the inspected file extension, and the value is a pair of `module` extension and `component` import extension
    */
   suggestedExtensions?: {
-    [k: string]: SuggestedExtensionMapping;
+    [k: string]: ISuggestedExtensionMapping;
   };
 }
-export interface SuggestedExtensionMapping {
+export interface ISuggestedExtensionMapping {
   /**
    * Extension that should be used for component file imports
    */
@@ -1382,218 +1384,218 @@ export interface SuggestedExtensionMapping {
 /**
  * A list of rules that belong to this group
  */
-export interface Nursery {
+export interface INursery {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Disallow use of CommonJs module system in favor of ESM style imports.
    */
-  noCommonJs?: RuleConfiguration | null;
+  noCommonJs?: IRuleConfiguration;
   /**
    * Disallow a lower specificity selector from coming after a higher specificity selector.
    */
-  noDescendingSpecificity?: RuleConfiguration | null;
+  noDescendingSpecificity?: IRuleConfiguration;
   /**
    * Disallow direct assignments to document.cookie.
    */
-  noDocumentCookie?: RuleConfiguration | null;
+  noDocumentCookie?: IRuleConfiguration;
   /**
    * Prevents importing next/document outside of pages/_document.jsx in Next.js projects.
    */
-  noDocumentImportInPage?: RuleConfiguration | null;
+  noDocumentImportInPage?: IRuleConfiguration;
   /**
    * Disallow duplicate custom properties within declaration blocks.
    */
-  noDuplicateCustomProperties?: RuleConfiguration | null;
+  noDuplicateCustomProperties?: IRuleConfiguration;
   /**
    * Disallow duplicate conditions in if-else-if chains
    */
-  noDuplicateElseIf?: RuleConfiguration | null;
+  noDuplicateElseIf?: IRuleConfiguration;
   /**
    * Disallow duplicate properties within declaration blocks.
    */
-  noDuplicateProperties?: RuleConfiguration | null;
+  noDuplicateProperties?: IRuleConfiguration;
   /**
    * No duplicated fields in GraphQL operations.
    */
-  noDuplicatedFields?: RuleConfiguration | null;
+  noDuplicatedFields?: IRuleConfiguration;
   /**
    * Disallow accessing namespace imports dynamically.
    */
-  noDynamicNamespaceImportAccess?: RuleConfiguration | null;
+  noDynamicNamespaceImportAccess?: IRuleConfiguration;
   /**
    * Disallow TypeScript enum.
    */
-  noEnum?: RuleConfiguration | null;
+  noEnum?: IRuleConfiguration;
   /**
    * Disallow exporting an imported variable.
    */
-  noExportedImports?: RuleConfiguration | null;
+  noExportedImports?: IRuleConfiguration;
   /**
    * Prevent usage of \<head> element in a Next.js project.
    */
-  noHeadElement?: RuleConfiguration | null;
+  noHeadElement?: IRuleConfiguration;
   /**
    * Prevent using the next/head module in pages/_document.js on Next.js projects.
    */
-  noHeadImportInDocument?: RuleConfiguration | null;
+  noHeadImportInDocument?: IRuleConfiguration;
   /**
    * Prevent usage of \<img> element in a Next.js project.
    */
-  noImgElement?: RuleConfiguration | null;
+  noImgElement?: IRuleConfiguration;
   /**
    * Disallows the use of irregular whitespace characters.
    */
-  noIrregularWhitespace?: RuleConfiguration | null;
+  noIrregularWhitespace?: IRuleConfiguration;
   /**
    * Disallow missing var function for css variables.
    */
-  noMissingVarFunction?: RuleConfiguration | null;
+  noMissingVarFunction?: IRuleConfiguration;
   /**
    * Disallow nested ternary expressions.
    */
-  noNestedTernary?: RuleConfiguration | null;
+  noNestedTernary?: IRuleConfiguration;
   /**
    * Disallow octal escape sequences in string literals
    */
-  noOctalEscape?: RuleConfiguration | null;
+  noOctalEscape?: IRuleConfiguration;
   /**
    * Disallow the use of process.env.
    */
-  noProcessEnv?: RuleConfiguration | null;
+  noProcessEnv?: IRuleConfiguration;
   /**
    * Disallow specified modules when loaded by import or require.
    */
-  noRestrictedImports?: RestrictedImportsConfiguration | null;
+  noRestrictedImports?: IRestrictedImportsConfiguration;
   /**
    * Disallow user defined types.
    */
-  noRestrictedTypes?: NoRestrictedTypesConfiguration | null;
+  noRestrictedTypes?: INoRestrictedTypesConfiguration;
   /**
    * Disallow usage of sensitive data such as API keys and tokens.
    */
-  noSecrets?: NoSecretsConfiguration | null;
+  noSecrets?: INoSecretsConfiguration;
   /**
    * Enforce that static, visible elements (such as \<div>) that have click handlers use the valid role attribute.
    */
-  noStaticElementInteractions?: RuleConfiguration | null;
+  noStaticElementInteractions?: IRuleConfiguration;
   /**
    * Enforce the use of String.slice() over String.substr() and String.substring().
    */
-  noSubstr?: RuleFixConfiguration | null;
+  noSubstr?: IRuleFixConfiguration;
   /**
    * Disallow template literal placeholder syntax in regular strings.
    */
-  noTemplateCurlyInString?: RuleConfiguration | null;
+  noTemplateCurlyInString?: IRuleConfiguration;
   /**
    * Disallow unknown pseudo-class selectors.
    */
-  noUnknownPseudoClass?: RuleConfiguration | null;
+  noUnknownPseudoClass?: IRuleConfiguration;
   /**
    * Disallow unknown pseudo-element selectors.
    */
-  noUnknownPseudoElement?: RuleConfiguration | null;
+  noUnknownPseudoElement?: IRuleConfiguration;
   /**
    * Disallow unknown type selectors.
    */
-  noUnknownTypeSelector?: RuleConfiguration | null;
+  noUnknownTypeSelector?: IRuleConfiguration;
   /**
    * Disallow unnecessary escape sequence in regular expression literals.
    */
-  noUselessEscapeInRegex?: RuleFixConfiguration | null;
+  noUselessEscapeInRegex?: IRuleFixConfiguration;
   /**
    * Disallow unnecessary String.raw function in template string literals without any escape sequence.
    */
-  noUselessStringRaw?: RuleConfiguration | null;
+  noUselessStringRaw?: IRuleConfiguration;
   /**
    * Disallow use of @value rule in css modules.
    */
-  noValueAtRule?: RuleConfiguration | null;
+  noValueAtRule?: IRuleConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
   /**
    * Disallow the use of overload signatures that are not next to each other.
    */
-  useAdjacentOverloadSignatures?: RuleConfiguration | null;
+  useAdjacentOverloadSignatures?: IRuleConfiguration;
   /**
    * Enforce that ARIA properties are valid for the roles that are supported by the element.
    */
-  useAriaPropsSupportedByRole?: RuleConfiguration | null;
+  useAriaPropsSupportedByRole?: IRuleConfiguration;
   /**
    * Use at() instead of integer index access.
    */
-  useAtIndex?: RuleFixConfiguration | null;
+  useAtIndex?: IRuleFixConfiguration;
   /**
    * Enforce using single if instead of nested if clauses.
    */
-  useCollapsedIf?: RuleFixConfiguration | null;
+  useCollapsedIf?: IRuleFixConfiguration;
   /**
    * Enforce declaring components only within modules that export React Components exclusively.
    */
-  useComponentExportOnlyModules?: UseComponentExportOnlyModulesConfiguration | null;
+  useComponentExportOnlyModules?: IUseComponentExportOnlyModulesConfiguration;
   /**
    * This rule enforces consistent use of curly braces inside JSX attributes and JSX children.
    */
-  useConsistentCurlyBraces?: RuleFixConfiguration | null;
+  useConsistentCurlyBraces?: IRuleFixConfiguration;
   /**
    * Require consistent accessibility modifiers on class properties and methods.
    */
-  useConsistentMemberAccessibility?: ConsistentMemberAccessibilityConfiguration | null;
+  useConsistentMemberAccessibility?: IConsistentMemberAccessibilityConfiguration;
   /**
    * Require specifying the reason argument when using @deprecated directive
    */
-  useDeprecatedReason?: RuleConfiguration | null;
+  useDeprecatedReason?: IRuleConfiguration;
   /**
    * Require explicit return types on functions and class methods.
    */
-  useExplicitType?: RuleConfiguration | null;
+  useExplicitType?: IRuleConfiguration;
   /**
    * Enforces the use of a recommended display strategy with Google Fonts.
    */
-  useGoogleFontDisplay?: RuleConfiguration | null;
+  useGoogleFontDisplay?: IRuleConfiguration;
   /**
    * Require for-in loops to include an if statement.
    */
-  useGuardForIn?: RuleConfiguration | null;
+  useGuardForIn?: IRuleConfiguration;
   /**
    * Disallows package private imports.
    */
-  useImportRestrictions?: RuleConfiguration | null;
+  useImportRestrictions?: IRuleConfiguration;
   /**
    * Enforce the sorting of CSS utility classes.
    */
-  useSortedClasses?: UtilityClassSortingConfiguration | null;
+  useSortedClasses?: IUtilityClassSortingConfiguration;
   /**
    * Enforce the use of the directive "use strict" in script files.
    */
-  useStrictMode?: RuleFixConfiguration | null;
+  useStrictMode?: IRuleFixConfiguration;
   /**
    * Enforce the use of String.trimStart() and String.trimEnd() over String.trimLeft() and String.trimRight().
    */
-  useTrimStartEnd?: RuleFixConfiguration | null;
+  useTrimStartEnd?: IRuleFixConfiguration;
   /**
    * Use valid values for the autocomplete attribute on input elements.
    */
-  useValidAutocomplete?: UseValidAutocompleteConfiguration | null;
+  useValidAutocomplete?: IUseValidAutocompleteConfiguration;
 }
-export interface RuleWithRestrictedImportsOptions {
+export interface IRuleWithRestrictedImportsOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: RestrictedImportsOptions;
+  options?: IRestrictedImportsOptions;
 }
 /**
  * Options for the rule `noRestrictedImports`.
  */
-export interface RestrictedImportsOptions {
+export interface IRestrictedImportsOptions {
   /**
    * A list of names that should trigger the rule
    */
@@ -1601,56 +1603,56 @@ export interface RestrictedImportsOptions {
     [k: string]: string;
   };
 }
-export interface RuleWithNoRestrictedTypesOptions {
+export interface IRuleWithNoRestrictedTypesOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: NoRestrictedTypesOptions;
+  options?: INoRestrictedTypesOptions;
 }
-export interface NoRestrictedTypesOptions {
+export interface INoRestrictedTypesOptions {
   types?: {
-    [k: string]: CustomRestrictedType;
+    [k: string]: ICustomRestrictedType;
   };
 }
-export interface CustomRestrictedTypeOptions {
+export interface ICustomRestrictedTypeOptions {
   message?: string;
-  use?: string | null;
+  use?: string;
 }
-export interface RuleWithNoSecretsOptions {
+export interface IRuleWithNoSecretsOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: NoSecretsOptions;
+  options?: INoSecretsOptions;
 }
-export interface NoSecretsOptions {
+export interface INoSecretsOptions {
   /**
    * Set entropy threshold (default is 41).
    */
-  entropyThreshold?: number | null;
+  entropyThreshold?: number;
 }
-export interface RuleWithUseComponentExportOnlyModulesOptions {
+export interface IRuleWithUseComponentExportOnlyModulesOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: UseComponentExportOnlyModulesOptions;
+  options?: IUseComponentExportOnlyModulesOptions;
 }
-export interface UseComponentExportOnlyModulesOptions {
+export interface IUseComponentExportOnlyModulesOptions {
   /**
    * Allows the export of constants. This option is for environments that support it, such as [Vite](https://vitejs.dev/)
    */
@@ -1660,54 +1662,54 @@ export interface UseComponentExportOnlyModulesOptions {
    */
   allowExportNames?: string[];
 }
-export interface RuleWithConsistentMemberAccessibilityOptions {
+export interface IRuleWithConsistentMemberAccessibilityOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: ConsistentMemberAccessibilityOptions;
+  options?: IConsistentMemberAccessibilityOptions;
 }
-export interface ConsistentMemberAccessibilityOptions {
-  accessibility?: Accessibility & string;
+export interface IConsistentMemberAccessibilityOptions {
+  accessibility?: IAccessibility & string;
 }
-export interface RuleWithUtilityClassSortingOptions {
+export interface IRuleWithUtilityClassSortingOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: UtilityClassSortingOptions;
+  options?: IUtilityClassSortingOptions;
 }
-export interface UtilityClassSortingOptions {
+export interface IUtilityClassSortingOptions {
   /**
    * Additional attributes that will be sorted.
    */
-  attributes?: string[] | null;
+  attributes?: string[];
   /**
    * Names of the functions or tagged templates that will be sorted.
    */
-  functions?: string[] | null;
+  functions?: string[];
 }
-export interface RuleWithUseValidAutocompleteOptions {
+export interface IRuleWithUseValidAutocompleteOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: UseValidAutocompleteOptions;
+  options?: IUseValidAutocompleteOptions;
 }
-export interface UseValidAutocompleteOptions {
+export interface IUseValidAutocompleteOptions {
   /**
    * `input` like custom components that should be checked.
    */
@@ -1716,328 +1718,328 @@ export interface UseValidAutocompleteOptions {
 /**
  * A list of rules that belong to this group
  */
-export interface Performance {
+export interface IPerformance {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Disallow the use of spread (...) syntax on accumulators.
    */
-  noAccumulatingSpread?: RuleConfiguration | null;
+  noAccumulatingSpread?: IRuleConfiguration;
   /**
    * Disallow the use of barrel file.
    */
-  noBarrelFile?: RuleConfiguration | null;
+  noBarrelFile?: IRuleConfiguration;
   /**
    * Disallow the use of the delete operator.
    */
-  noDelete?: RuleFixConfiguration | null;
+  noDelete?: IRuleFixConfiguration;
   /**
    * Avoid re-export all.
    */
-  noReExportAll?: RuleConfiguration | null;
+  noReExportAll?: IRuleConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
   /**
    * Require regex literals to be declared at the top level.
    */
-  useTopLevelRegex?: RuleConfiguration | null;
+  useTopLevelRegex?: IRuleConfiguration;
 }
 /**
  * A list of rules that belong to this group
  */
-export interface Security {
+export interface ISecurity {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Prevent the usage of dangerous JSX props
    */
-  noDangerouslySetInnerHtml?: RuleConfiguration | null;
+  noDangerouslySetInnerHtml?: IRuleConfiguration;
   /**
    * Report when a DOM element or a component uses both children and dangerouslySetInnerHTML prop.
    */
-  noDangerouslySetInnerHtmlWithChildren?: RuleConfiguration | null;
+  noDangerouslySetInnerHtmlWithChildren?: IRuleConfiguration;
   /**
    * Disallow the use of global eval().
    */
-  noGlobalEval?: RuleConfiguration | null;
+  noGlobalEval?: IRuleConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
 }
 /**
  * A list of rules that belong to this group
  */
-export interface Style {
+export interface IStyle {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Disallow the use of arguments.
    */
-  noArguments?: RuleConfiguration | null;
+  noArguments?: IRuleConfiguration;
   /**
    * Disallow comma operator.
    */
-  noCommaOperator?: RuleConfiguration | null;
+  noCommaOperator?: IRuleConfiguration;
   /**
    * Disallow default exports.
    */
-  noDefaultExport?: RuleConfiguration | null;
+  noDefaultExport?: IRuleConfiguration;
   /**
    * Disallow using a callback in asynchronous tests and hooks.
    */
-  noDoneCallback?: RuleConfiguration | null;
+  noDoneCallback?: IRuleConfiguration;
   /**
    * Disallow implicit true values on JSX boolean attributes
    */
-  noImplicitBoolean?: RuleFixConfiguration | null;
+  noImplicitBoolean?: IRuleFixConfiguration;
   /**
    * Disallow type annotations for variables, parameters, and class properties initialized with a literal expression.
    */
-  noInferrableTypes?: RuleFixConfiguration | null;
+  noInferrableTypes?: IRuleFixConfiguration;
   /**
    * Disallow the use of TypeScript's namespaces.
    */
-  noNamespace?: RuleConfiguration | null;
+  noNamespace?: IRuleConfiguration;
   /**
    * Disallow the use of namespace imports.
    */
-  noNamespaceImport?: RuleConfiguration | null;
+  noNamespaceImport?: IRuleConfiguration;
   /**
    * Disallow negation in the condition of an if statement if it has an else clause.
    */
-  noNegationElse?: RuleFixConfiguration | null;
+  noNegationElse?: IRuleFixConfiguration;
   /**
    * Disallow non-null assertions using the ! postfix operator.
    */
-  noNonNullAssertion?: RuleFixConfiguration | null;
+  noNonNullAssertion?: IRuleFixConfiguration;
   /**
    * Disallow reassigning function parameters.
    */
-  noParameterAssign?: RuleConfiguration | null;
+  noParameterAssign?: IRuleConfiguration;
   /**
    * Disallow the use of parameter properties in class constructors.
    */
-  noParameterProperties?: RuleConfiguration | null;
+  noParameterProperties?: IRuleConfiguration;
   /**
    * This rule allows you to specify global variable names that you don’t want to use in your application.
    */
-  noRestrictedGlobals?: RestrictedGlobalsConfiguration | null;
+  noRestrictedGlobals?: IRestrictedGlobalsConfiguration;
   /**
    * Disallow the use of constants which its value is the upper-case version of its name.
    */
-  noShoutyConstants?: RuleFixConfiguration | null;
+  noShoutyConstants?: IRuleFixConfiguration;
   /**
    * Disallow template literals if interpolation and special-character handling are not needed
    */
-  noUnusedTemplateLiteral?: RuleFixConfiguration | null;
+  noUnusedTemplateLiteral?: IRuleFixConfiguration;
   /**
    * Disallow else block when the if block breaks early.
    */
-  noUselessElse?: RuleFixConfiguration | null;
+  noUselessElse?: IRuleFixConfiguration;
   /**
    * Disallow the use of var
    */
-  noVar?: RuleFixConfiguration | null;
+  noVar?: IRuleFixConfiguration;
   /**
    * Disallow the use of yoda expressions.
    */
-  noYodaExpression?: RuleFixConfiguration | null;
+  noYodaExpression?: IRuleFixConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
   /**
    * Enforce the use of as const over literal type and type annotation.
    */
-  useAsConstAssertion?: RuleFixConfiguration | null;
+  useAsConstAssertion?: IRuleFixConfiguration;
   /**
    * Requires following curly brace conventions.
    */
-  useBlockStatements?: RuleFixConfiguration | null;
+  useBlockStatements?: IRuleFixConfiguration;
   /**
    * Enforce using else if instead of nested if in else clauses.
    */
-  useCollapsedElseIf?: RuleFixConfiguration | null;
+  useCollapsedElseIf?: IRuleFixConfiguration;
   /**
    * Require consistently using either T\[] or Array\<T>
    */
-  useConsistentArrayType?: ConsistentArrayTypeConfiguration | null;
+  useConsistentArrayType?: IConsistentArrayTypeConfiguration;
   /**
    * Enforce the use of new for all builtins, except String, Number and Boolean.
    */
-  useConsistentBuiltinInstantiation?: RuleFixConfiguration | null;
+  useConsistentBuiltinInstantiation?: IRuleFixConfiguration;
   /**
    * Require const declarations for variables that are only assigned once.
    */
-  useConst?: RuleFixConfiguration | null;
+  useConst?: IRuleFixConfiguration;
   /**
    * Enforce default function parameters and optional function parameters to be last.
    */
-  useDefaultParameterLast?: RuleFixConfiguration | null;
+  useDefaultParameterLast?: IRuleFixConfiguration;
   /**
    * Require the default clause in switch statements.
    */
-  useDefaultSwitchClause?: RuleConfiguration | null;
+  useDefaultSwitchClause?: IRuleConfiguration;
   /**
    * Require that each enum member value be explicitly initialized.
    */
-  useEnumInitializers?: RuleFixConfiguration | null;
+  useEnumInitializers?: IRuleFixConfiguration;
   /**
    * Enforce explicitly comparing the length, size, byteLength or byteOffset property of a value.
    */
-  useExplicitLengthCheck?: RuleFixConfiguration | null;
+  useExplicitLengthCheck?: IRuleFixConfiguration;
   /**
    * Disallow the use of Math.pow in favor of the ** operator.
    */
-  useExponentiationOperator?: RuleFixConfiguration | null;
+  useExponentiationOperator?: IRuleFixConfiguration;
   /**
    * Promotes the use of export type for types.
    */
-  useExportType?: RuleFixConfiguration | null;
+  useExportType?: IRuleFixConfiguration;
   /**
    * Enforce naming conventions for JavaScript and TypeScript filenames.
    */
-  useFilenamingConvention?: FilenamingConventionConfiguration | null;
+  useFilenamingConvention?: IFilenamingConventionConfiguration;
   /**
    * This rule recommends a for-of loop when in a for loop, the index used to extract an item from the iterated array.
    */
-  useForOf?: RuleConfiguration | null;
+  useForOf?: IRuleConfiguration;
   /**
    * This rule enforces the use of \<>...\</> over \<Fragment>...\</Fragment>.
    */
-  useFragmentSyntax?: RuleFixConfiguration | null;
+  useFragmentSyntax?: IRuleFixConfiguration;
   /**
    * Promotes the use of import type for types.
    */
-  useImportType?: RuleFixConfiguration | null;
+  useImportType?: IRuleFixConfiguration;
   /**
    * Require all enum members to be literal values.
    */
-  useLiteralEnumMembers?: RuleConfiguration | null;
+  useLiteralEnumMembers?: IRuleConfiguration;
   /**
    * Enforce naming conventions for everything across a codebase.
    */
-  useNamingConvention?: NamingConventionConfiguration | null;
+  useNamingConvention?: INamingConventionConfiguration;
   /**
    * Promotes the usage of node:assert/strict over node:assert.
    */
-  useNodeAssertStrict?: RuleFixConfiguration | null;
+  useNodeAssertStrict?: IRuleFixConfiguration;
   /**
    * Enforces using the node: protocol for Node.js builtin modules.
    */
-  useNodejsImportProtocol?: RuleFixConfiguration | null;
+  useNodejsImportProtocol?: IRuleFixConfiguration;
   /**
    * Use the Number properties instead of global ones.
    */
-  useNumberNamespace?: RuleFixConfiguration | null;
+  useNumberNamespace?: IRuleFixConfiguration;
   /**
    * Disallow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
    */
-  useNumericLiterals?: RuleFixConfiguration | null;
+  useNumericLiterals?: IRuleFixConfiguration;
   /**
    * Prevent extra closing tags for components without children
    */
-  useSelfClosingElements?: RuleFixConfiguration | null;
+  useSelfClosingElements?: IRuleFixConfiguration;
   /**
    * When expressing array types, this rule promotes the usage of T\[] shorthand instead of Array\<T>.
    */
-  useShorthandArrayType?: RuleFixConfiguration | null;
+  useShorthandArrayType?: IRuleFixConfiguration;
   /**
    * Require assignment operator shorthand where possible.
    */
-  useShorthandAssign?: RuleFixConfiguration | null;
+  useShorthandAssign?: IRuleFixConfiguration;
   /**
    * Enforce using function types instead of object type with call signatures.
    */
-  useShorthandFunctionType?: RuleFixConfiguration | null;
+  useShorthandFunctionType?: IRuleFixConfiguration;
   /**
    * Enforces switch clauses have a single statement, emits a quick fix wrapping the statements in a block.
    */
-  useSingleCaseStatement?: RuleFixConfiguration | null;
+  useSingleCaseStatement?: IRuleFixConfiguration;
   /**
    * Disallow multiple variable declarations in the same variable statement
    */
-  useSingleVarDeclarator?: RuleFixConfiguration | null;
+  useSingleVarDeclarator?: IRuleFixConfiguration;
   /**
    * Prefer template literals over string concatenation.
    */
-  useTemplate?: RuleFixConfiguration | null;
+  useTemplate?: IRuleFixConfiguration;
   /**
    * Require new when throwing an error.
    */
-  useThrowNewError?: RuleFixConfiguration | null;
+  useThrowNewError?: IRuleFixConfiguration;
   /**
    * Disallow throwing non-Error values.
    */
-  useThrowOnlyError?: RuleConfiguration | null;
+  useThrowOnlyError?: IRuleConfiguration;
   /**
    * Enforce the use of while loops instead of for loops when the initializer and update expressions are not needed.
    */
-  useWhile?: RuleFixConfiguration | null;
+  useWhile?: IRuleFixConfiguration;
 }
-export interface RuleWithRestrictedGlobalsOptions {
+export interface IRuleWithRestrictedGlobalsOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: RestrictedGlobalsOptions;
+  options?: IRestrictedGlobalsOptions;
 }
 /**
  * Options for the rule `noRestrictedGlobals`.
  */
-export interface RestrictedGlobalsOptions {
+export interface IRestrictedGlobalsOptions {
   /**
    * A list of names that should trigger the rule
    */
   deniedGlobals?: string[];
 }
-export interface RuleWithConsistentArrayTypeOptions {
+export interface IRuleWithConsistentArrayTypeOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: ConsistentArrayTypeOptions;
+  options?: IConsistentArrayTypeOptions;
 }
-export interface ConsistentArrayTypeOptions {
-  syntax?: ConsistentArrayType & string;
+export interface IConsistentArrayTypeOptions {
+  syntax?: IConsistentArrayType & string;
 }
-export interface RuleWithFilenamingConventionOptions {
+export interface IRuleWithFilenamingConventionOptions {
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: FilenamingConventionOptions;
+  options?: IFilenamingConventionOptions;
 }
 /**
  * Rule's options.
  */
-export interface FilenamingConventionOptions {
+export interface IFilenamingConventionOptions {
   /**
    * Allowed cases for file names.
    */
-  filenameCases?: FilenameCases;
+  filenameCases?: IFilenameCases;
   /**
    * If `false`, then non-ASCII characters are allowed.
    */
@@ -2047,32 +2049,32 @@ export interface FilenamingConventionOptions {
    */
   strictCase?: boolean;
 }
-export interface RuleWithNamingConventionOptions {
+export interface IRuleWithNamingConventionOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: NamingConventionOptions;
+  options?: INamingConventionOptions;
 }
 /**
  * Rule's options.
  */
-export interface NamingConventionOptions {
+export interface INamingConventionOptions {
   /**
    * Custom conventions.
    */
-  conventions?: Convention[];
+  conventions?: IConvention[];
   /**
    * Allowed cases for _TypeScript_ `enum` member names.
    */
-  enumMemberCase?: Format;
+  enumMemberCase?: IFormat;
   /**
    * If `false`, then non-ASCII characters are allowed.
    */
@@ -2082,353 +2084,353 @@ export interface NamingConventionOptions {
    */
   strictCase?: boolean;
 }
-export interface Convention {
+export interface IConvention {
   /**
    * String cases to enforce
    */
-  formats?: Formats;
+  formats?: IFormats;
   /**
    * Regular expression to enforce
    */
-  match?: Regex | null;
+  match?: IRegex;
   /**
    * Declarations concerned by this convention
    */
-  selector?: Selector;
+  selector?: ISelector;
 }
-export interface Selector {
+export interface ISelector {
   /**
    * Declaration kind
    */
-  kind?: Kind;
+  kind?: IKind;
   /**
    * Modifiers used on the declaration
    */
-  modifiers?: Modifiers;
+  modifiers?: IModifiers;
   /**
    * Scope of the declaration
    */
-  scope?: Scope;
+  scope?: IScope;
 }
 /**
  * A list of rules that belong to this group
  */
-export interface Suspicious {
+export interface ISuspicious {
   /**
    * It enables ALL rules for this group.
    */
-  all?: boolean | null;
+  all?: boolean;
   /**
    * Use standard constants instead of approximated literals.
    */
-  noApproximativeNumericConstant?: RuleFixConfiguration | null;
+  noApproximativeNumericConstant?: IRuleFixConfiguration;
   /**
    * Discourage the usage of Array index in keys.
    */
-  noArrayIndexKey?: RuleConfiguration | null;
+  noArrayIndexKey?: IRuleConfiguration;
   /**
    * Disallow assignments in expressions.
    */
-  noAssignInExpressions?: RuleConfiguration | null;
+  noAssignInExpressions?: IRuleConfiguration;
   /**
    * Disallows using an async function as a Promise executor.
    */
-  noAsyncPromiseExecutor?: RuleConfiguration | null;
+  noAsyncPromiseExecutor?: IRuleConfiguration;
   /**
    * Disallow reassigning exceptions in catch clauses.
    */
-  noCatchAssign?: RuleConfiguration | null;
+  noCatchAssign?: IRuleConfiguration;
   /**
    * Disallow reassigning class members.
    */
-  noClassAssign?: RuleConfiguration | null;
+  noClassAssign?: IRuleConfiguration;
   /**
    * Prevent comments from being inserted as text nodes
    */
-  noCommentText?: RuleFixConfiguration | null;
+  noCommentText?: IRuleFixConfiguration;
   /**
    * Disallow comparing against -0
    */
-  noCompareNegZero?: RuleFixConfiguration | null;
+  noCompareNegZero?: IRuleFixConfiguration;
   /**
    * Disallow labeled statements that are not loops.
    */
-  noConfusingLabels?: RuleConfiguration | null;
+  noConfusingLabels?: IRuleConfiguration;
   /**
    * Disallow void type outside of generic or return types.
    */
-  noConfusingVoidType?: RuleFixConfiguration | null;
+  noConfusingVoidType?: IRuleFixConfiguration;
   /**
    * Disallow the use of console.
    */
-  noConsole?: NoConsoleConfiguration | null;
+  noConsole?: INoConsoleConfiguration;
   /**
    * Disallow the use of console.log
    */
-  noConsoleLog?: RuleFixConfiguration | null;
+  noConsoleLog?: IRuleFixConfiguration;
   /**
    * Disallow TypeScript const enum
    */
-  noConstEnum?: RuleFixConfiguration | null;
+  noConstEnum?: IRuleFixConfiguration;
   /**
    * Prevents from having control characters and some escape sequences that match control characters in regular expressions.
    */
-  noControlCharactersInRegex?: RuleConfiguration | null;
+  noControlCharactersInRegex?: IRuleConfiguration;
   /**
    * Disallow the use of debugger
    */
-  noDebugger?: RuleFixConfiguration | null;
+  noDebugger?: IRuleFixConfiguration;
   /**
    * Require the use of === and !==.
    */
-  noDoubleEquals?: NoDoubleEqualsConfiguration | null;
+  noDoubleEquals?: INoDoubleEqualsConfiguration;
   /**
    * Disallow duplicate @import rules.
    */
-  noDuplicateAtImportRules?: RuleConfiguration | null;
+  noDuplicateAtImportRules?: IRuleConfiguration;
   /**
    * Disallow duplicate case labels.
    */
-  noDuplicateCase?: RuleConfiguration | null;
+  noDuplicateCase?: IRuleConfiguration;
   /**
    * Disallow duplicate class members.
    */
-  noDuplicateClassMembers?: RuleConfiguration | null;
+  noDuplicateClassMembers?: IRuleConfiguration;
   /**
    * Disallow duplicate names within font families.
    */
-  noDuplicateFontNames?: RuleConfiguration | null;
+  noDuplicateFontNames?: IRuleConfiguration;
   /**
    * Prevents JSX properties to be assigned multiple times.
    */
-  noDuplicateJsxProps?: RuleConfiguration | null;
+  noDuplicateJsxProps?: IRuleConfiguration;
   /**
    * Disallow two keys with the same name inside objects.
    */
-  noDuplicateObjectKeys?: RuleConfiguration | null;
+  noDuplicateObjectKeys?: IRuleConfiguration;
   /**
    * Disallow duplicate function parameter name.
    */
-  noDuplicateParameters?: RuleConfiguration | null;
+  noDuplicateParameters?: IRuleConfiguration;
   /**
    * Disallow duplicate selectors within keyframe blocks.
    */
-  noDuplicateSelectorsKeyframeBlock?: RuleConfiguration | null;
+  noDuplicateSelectorsKeyframeBlock?: IRuleConfiguration;
   /**
    * A describe block should not contain duplicate hooks.
    */
-  noDuplicateTestHooks?: RuleConfiguration | null;
+  noDuplicateTestHooks?: IRuleConfiguration;
   /**
    * Disallow CSS empty blocks.
    */
-  noEmptyBlock?: RuleConfiguration | null;
+  noEmptyBlock?: IRuleConfiguration;
   /**
    * Disallow empty block statements and static blocks.
    */
-  noEmptyBlockStatements?: RuleConfiguration | null;
+  noEmptyBlockStatements?: IRuleConfiguration;
   /**
    * Disallow the declaration of empty interfaces.
    */
-  noEmptyInterface?: RuleFixConfiguration | null;
+  noEmptyInterface?: IRuleFixConfiguration;
   /**
    * Disallow variables from evolving into any type through reassignments.
    */
-  noEvolvingTypes?: RuleConfiguration | null;
+  noEvolvingTypes?: IRuleConfiguration;
   /**
    * Disallow the any type usage.
    */
-  noExplicitAny?: RuleConfiguration | null;
+  noExplicitAny?: IRuleConfiguration;
   /**
    * Disallow using export or module.exports in files containing tests
    */
-  noExportsInTest?: RuleConfiguration | null;
+  noExportsInTest?: IRuleConfiguration;
   /**
    * Prevents the wrong usage of the non-null assertion operator (!) in TypeScript files.
    */
-  noExtraNonNullAssertion?: RuleFixConfiguration | null;
+  noExtraNonNullAssertion?: IRuleFixConfiguration;
   /**
    * Disallow fallthrough of switch clauses.
    */
-  noFallthroughSwitchClause?: RuleConfiguration | null;
+  noFallthroughSwitchClause?: IRuleConfiguration;
   /**
    * Disallow focused tests.
    */
-  noFocusedTests?: RuleFixConfiguration | null;
+  noFocusedTests?: IRuleFixConfiguration;
   /**
    * Disallow reassigning function declarations.
    */
-  noFunctionAssign?: RuleConfiguration | null;
+  noFunctionAssign?: IRuleConfiguration;
   /**
    * Disallow assignments to native objects and read-only global variables.
    */
-  noGlobalAssign?: RuleConfiguration | null;
+  noGlobalAssign?: IRuleConfiguration;
   /**
    * Use Number.isFinite instead of global isFinite.
    */
-  noGlobalIsFinite?: RuleFixConfiguration | null;
+  noGlobalIsFinite?: IRuleFixConfiguration;
   /**
    * Use Number.isNaN instead of global isNaN.
    */
-  noGlobalIsNan?: RuleFixConfiguration | null;
+  noGlobalIsNan?: IRuleFixConfiguration;
   /**
    * Disallow use of implicit any type on variable declarations.
    */
-  noImplicitAnyLet?: RuleConfiguration | null;
+  noImplicitAnyLet?: IRuleConfiguration;
   /**
    * Disallow assigning to imported bindings
    */
-  noImportAssign?: RuleConfiguration | null;
+  noImportAssign?: IRuleConfiguration;
   /**
    * Disallow invalid !important within keyframe declarations
    */
-  noImportantInKeyframe?: RuleConfiguration | null;
+  noImportantInKeyframe?: IRuleConfiguration;
   /**
    * Disallow labels that share a name with a variable
    */
-  noLabelVar?: RuleConfiguration | null;
+  noLabelVar?: IRuleConfiguration;
   /**
    * Disallow characters made with multiple code points in character class syntax.
    */
-  noMisleadingCharacterClass?: RuleFixConfiguration | null;
+  noMisleadingCharacterClass?: IRuleFixConfiguration;
   /**
    * Enforce proper usage of new and constructor.
    */
-  noMisleadingInstantiator?: RuleConfiguration | null;
+  noMisleadingInstantiator?: IRuleConfiguration;
   /**
    * Checks that the assertion function, for example expect, is placed inside an it() function call.
    */
-  noMisplacedAssertion?: RuleConfiguration | null;
+  noMisplacedAssertion?: IRuleConfiguration;
   /**
    * Disallow shorthand assign when variable appears on both sides.
    */
-  noMisrefactoredShorthandAssign?: RuleFixConfiguration | null;
+  noMisrefactoredShorthandAssign?: IRuleFixConfiguration;
   /**
    * Disallow direct use of Object.prototype builtins.
    */
-  noPrototypeBuiltins?: RuleConfiguration | null;
+  noPrototypeBuiltins?: IRuleConfiguration;
   /**
    * Prevents React-specific JSX properties from being used.
    */
-  noReactSpecificProps?: RuleFixConfiguration | null;
+  noReactSpecificProps?: IRuleFixConfiguration;
   /**
    * Disallow variable, function, class, and type redeclarations in the same scope.
    */
-  noRedeclare?: RuleConfiguration | null;
+  noRedeclare?: IRuleConfiguration;
   /**
    * Prevents from having redundant "use strict".
    */
-  noRedundantUseStrict?: RuleFixConfiguration | null;
+  noRedundantUseStrict?: IRuleFixConfiguration;
   /**
    * Disallow comparisons where both sides are exactly the same.
    */
-  noSelfCompare?: RuleConfiguration | null;
+  noSelfCompare?: IRuleConfiguration;
   /**
    * Disallow identifiers from shadowing restricted names.
    */
-  noShadowRestrictedNames?: RuleConfiguration | null;
+  noShadowRestrictedNames?: IRuleConfiguration;
   /**
    * Disallow shorthand properties that override related longhand properties.
    */
-  noShorthandPropertyOverrides?: RuleConfiguration | null;
+  noShorthandPropertyOverrides?: IRuleConfiguration;
   /**
    * Disallow disabled tests.
    */
-  noSkippedTests?: RuleFixConfiguration | null;
+  noSkippedTests?: IRuleFixConfiguration;
   /**
    * Disallow sparse arrays
    */
-  noSparseArray?: RuleFixConfiguration | null;
+  noSparseArray?: IRuleFixConfiguration;
   /**
    * It detects possible "wrong" semicolons inside JSX elements.
    */
-  noSuspiciousSemicolonInJsx?: RuleConfiguration | null;
+  noSuspiciousSemicolonInJsx?: IRuleConfiguration;
   /**
    * Disallow then property.
    */
-  noThenProperty?: RuleConfiguration | null;
+  noThenProperty?: IRuleConfiguration;
   /**
    * Disallow unsafe declaration merging between interfaces and classes.
    */
-  noUnsafeDeclarationMerging?: RuleConfiguration | null;
+  noUnsafeDeclarationMerging?: IRuleConfiguration;
   /**
    * Disallow using unsafe negation.
    */
-  noUnsafeNegation?: RuleFixConfiguration | null;
+  noUnsafeNegation?: IRuleFixConfiguration;
   /**
    * It enables the recommended rules for this group
    */
-  recommended?: boolean | null;
+  recommended?: boolean;
   /**
    * Ensure async functions utilize await.
    */
-  useAwait?: RuleConfiguration | null;
+  useAwait?: IRuleConfiguration;
   /**
    * Enforce default clauses in switch statements to be last
    */
-  useDefaultSwitchClauseLast?: RuleConfiguration | null;
+  useDefaultSwitchClauseLast?: IRuleConfiguration;
   /**
    * Enforce passing a message value when creating a built-in error.
    */
-  useErrorMessage?: RuleConfiguration | null;
+  useErrorMessage?: IRuleConfiguration;
   /**
    * Enforce get methods to always return a value.
    */
-  useGetterReturn?: RuleConfiguration | null;
+  useGetterReturn?: IRuleConfiguration;
   /**
    * Use Array.isArray() instead of instanceof Array.
    */
-  useIsArray?: RuleFixConfiguration | null;
+  useIsArray?: IRuleFixConfiguration;
   /**
    * Require using the namespace keyword over the module keyword to declare TypeScript namespaces.
    */
-  useNamespaceKeyword?: RuleFixConfiguration | null;
+  useNamespaceKeyword?: IRuleFixConfiguration;
   /**
    * Enforce using the digits argument with Number#toFixed().
    */
-  useNumberToFixedDigitsArgument?: RuleFixConfiguration | null;
+  useNumberToFixedDigitsArgument?: IRuleFixConfiguration;
   /**
    * This rule verifies the result of typeof $expr unary expressions is being compared to valid values, either string literals containing valid type names or other typeof expressions
    */
-  useValidTypeof?: RuleFixConfiguration | null;
+  useValidTypeof?: IRuleFixConfiguration;
 }
-export interface RuleWithNoConsoleOptions {
+export interface IRuleWithNoConsoleOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: NoConsoleOptions;
+  options?: INoConsoleOptions;
 }
-export interface NoConsoleOptions {
+export interface INoConsoleOptions {
   /**
    * Allowed calls on the console object.
    */
   allow: string[];
 }
-export interface RuleWithNoDoubleEqualsOptions {
+export interface IRuleWithNoDoubleEqualsOptions {
   /**
    * The kind of the code actions emitted by the rule
    */
-  fix?: FixKind | null;
+  fix?: IFixKind;
   /**
    * The severity of the emitted diagnostics by the rule
    */
-  level: RulePlainConfiguration;
+  level: IRulePlainConfiguration;
   /**
    * Rule's options
    */
-  options?: NoDoubleEqualsOptions;
+  options?: INoDoubleEqualsOptions;
 }
 /**
  * Rule's options
  */
-export interface NoDoubleEqualsOptions {
+export interface INoDoubleEqualsOptions {
   /**
    * If `true`, an exception is made when comparing with `null`, as it's often relied on to check both for `null` or `undefined`.
    *
@@ -2436,133 +2438,133 @@ export interface NoDoubleEqualsOptions {
    */
   ignoreNull?: boolean;
 }
-export interface OrganizeImports {
+export interface IOrganizeImports {
   /**
    * Enables the organization of imports
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * A list of Unix shell style patterns. The formatter will ignore files/folders that will match these patterns.
    */
-  ignore?: StringSet | null;
+  ignore?: IStringSet;
   /**
    * A list of Unix shell style patterns. The formatter will include files/folders that will match these patterns.
    */
-  include?: StringSet | null;
+  include?: IStringSet;
 }
-export interface OverridePattern {
+export interface IOverridePattern {
   /**
    * Specific configuration for the Css language
    */
-  css?: CssConfiguration | null;
+  css?: ICssConfiguration;
   /**
    * Specific configuration for the Json language
    */
-  formatter?: OverrideFormatterConfiguration | null;
+  formatter?: IOverrideFormatterConfiguration;
   /**
    * Specific configuration for the Graphql language
    */
-  graphql?: GraphqlConfiguration | null;
+  graphql?: IGraphqlConfiguration;
   /**
    * A list of Unix shell style patterns. The formatter will ignore files/folders that will match these patterns.
    */
-  ignore?: StringSet | null;
+  ignore?: IStringSet;
   /**
    * A list of Unix shell style patterns. The formatter will include files/folders that will match these patterns.
    */
-  include?: StringSet | null;
+  include?: IStringSet;
   /**
    * Specific configuration for the JavaScript language
    */
-  javascript?: JavascriptConfiguration | null;
+  javascript?: IJavascriptConfiguration;
   /**
    * Specific configuration for the Json language
    */
-  json?: JsonConfiguration | null;
+  json?: IJsonConfiguration;
   /**
    * Specific configuration for the Json language
    */
-  linter?: OverrideLinterConfiguration | null;
+  linter?: IOverrideLinterConfiguration;
   /**
    * Specific configuration for the Json language
    */
-  organizeImports?: OverrideOrganizeImportsConfiguration | null;
+  organizeImports?: IOverrideOrganizeImportsConfiguration;
 }
-export interface OverrideFormatterConfiguration {
+export interface IOverrideFormatterConfiguration {
   /**
    * The attribute position style.
    */
-  attributePosition?: AttributePosition | null;
+  attributePosition?: IAttributePosition;
   /**
    * Whether to insert spaces around brackets in object literals. Defaults to true.
    */
-  bracketSpacing?: BracketSpacing | null;
-  enabled?: boolean | null;
+  bracketSpacing?: IBracketSpacing;
+  enabled?: boolean;
   /**
    * Stores whether formatting should be allowed to proceed if a given file has syntax errors
    */
-  formatWithErrors?: boolean | null;
+  formatWithErrors?: boolean;
   /**
    * The size of the indentation, 2 by default (deprecated, use `indent-width`)
    */
-  indentSize?: IndentWidth | null;
+  indentSize?: IIndentWidth;
   /**
    * The indent style.
    */
-  indentStyle?: IndentStyle | null;
+  indentStyle?: IIndentStyle;
   /**
    * The size of the indentation, 2 by default
    */
-  indentWidth?: IndentWidth | null;
+  indentWidth?: IIndentWidth;
   /**
    * The type of line ending.
    */
-  lineEnding?: LineEnding | null;
+  lineEnding?: ILineEnding;
   /**
    * What's the max width of a line. Defaults to 80.
    */
-  lineWidth?: LineWidth | null;
+  lineWidth?: ILineWidth;
 }
-export interface OverrideLinterConfiguration {
+export interface IOverrideLinterConfiguration {
   /**
    * if `false`, it disables the feature and the linter won't be executed. `true` by default
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * List of rules
    */
-  rules?: Rules | null;
+  rules?: IRules;
 }
-export interface OverrideOrganizeImportsConfiguration {
+export interface IOverrideOrganizeImportsConfiguration {
   /**
    * if `false`, it disables the feature and the linter won't be executed. `true` by default
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
 }
 /**
  * Set of properties to integrate Biome with a VCS software.
  */
-export interface VcsConfiguration {
+export interface IVcsConfiguration {
   /**
    * The kind of client.
    */
-  clientKind?: VcsClientKind | null;
+  clientKind?: IVcsClientKind;
   /**
    * The main branch of the project
    */
-  defaultBranch?: string | null;
+  defaultBranch?: string;
   /**
    * Whether Biome should integrate itself with the VCS client
    */
-  enabled?: boolean | null;
+  enabled?: boolean;
   /**
    * The folder where Biome should check for VCS files. By default, Biome will use the same folder where `biome.json` was found.
    *
    * If Biome can't find the configuration, it will attempt to use the current working directory. If no current working directory can't be found, Biome won't use the VCS integration, and a diagnostic will be emitted
    */
-  root?: string | null;
+  root?: string;
   /**
    * Whether Biome should use the VCS ignore file. When [true], Biome will ignore the files specified in the ignore file.
    */
-  useIgnoreFile?: boolean | null;
+  useIgnoreFile?: boolean;
 }

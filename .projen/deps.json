@@ -1,11 +1,6 @@
 {
   "dependencies": [
     {
-      "name": "@biomejs/biome",
-      "version": "^1",
-      "type": "build"
-    },
-    {
       "name": "@nikovirtala/projen-vitest",
       "type": "build"
     },
@@ -51,10 +46,6 @@
       "type": "build"
     },
     {
-      "name": "jsonc-parse",
-      "type": "build"
-    },
-    {
       "name": "projen",
       "type": "build"
     },
@@ -72,13 +63,13 @@
       "type": "build"
     },
     {
+      "name": "@biomejs/biome",
+      "type": "bundled"
+    },
+    {
       "name": "@vitest/coverage-v8",
       "version": "^3",
       "type": "devenv"
-    },
-    {
-      "name": "@biomejs/biome",
-      "type": "peer"
     },
     {
       "name": "constructs",

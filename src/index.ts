@@ -1,7 +1,8 @@
 import { Component, JsonFile, ProjenrcFile } from "projen";
 import { Eslint, type NodeProject, Prettier } from "projen/lib/javascript";
 import { TypeScriptProject } from "projen/lib/typescript";
-import type { Configuration } from "./biome-configuration";
+import type { IConfiguration } from "./biome-configuration";
+export * from "./biome-configuration";
 
 export interface BiomeOptions {
 	/**
@@ -33,7 +34,7 @@ export interface BiomeOptions {
 	 *
 	 * @example if linter is disabled on main level, it can be enabled on fullConfiguration.formatter.enabled.
 	 */
-	readonly overrides?: Configuration;
+	readonly overrides?: IConfiguration;
 }
 
 export class Biome extends Component {
@@ -56,7 +57,9 @@ export class Biome extends Component {
 		this.linterEnabled = options.linter ?? true;
 		this.importOrganizedEnabled = options.organizeImports ?? false;
 
-		project.addDevDeps(`@biomejs/biome@${this.version}`);
+		if (project.name !== "projen-biome") {
+			project.addDevDeps(`@biomejs/biome@${this.version}`);
+		}
 
 		const biomeConfiguration = structuredClone(options.overrides ?? {});
 

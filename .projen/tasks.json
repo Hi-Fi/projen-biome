@@ -107,9 +107,6 @@
       "steps": [
         {
           "exec": "ts-node --project tsconfig.dev.json .projenrc.ts"
-        },
-        {
-          "spawn": "parse-biome-types"
         }
       ]
     },
@@ -181,14 +178,6 @@
       "steps": [
         {
           "exec": "jsii-pacmak -v --target js"
-        }
-      ]
-    },
-    "parse-biome-types": {
-      "name": "parse-biome-types",
-      "steps": [
-        {
-          "exec": "npx --package=json-schema-to-typescript json2ts --input node_modules/@biomejs/biome/configuration_schema.json --output src/biome-configuration.ts"
         }
       ]
     },
@@ -289,13 +278,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@nikovirtala/projen-vitest,@types/node,jsii-diff,jsii-pacmak,json-schema-to-typescript,jsonc-parse,projen,ts-node,typescript,@biomejs/biome,constructs"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@nikovirtala/projen-vitest,@types/node,jsii-diff,jsii-pacmak,json-schema-to-typescript,projen,ts-node,typescript,@biomejs/biome,constructs"
         },
         {
           "exec": "npm install"
         },
         {
-          "exec": "npm update @biomejs/biome @nikovirtala/projen-vitest @types/node commit-and-tag-version constructs jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii json-schema-to-typescript jsonc-parse projen ts-node typescript vitest @vitest/coverage-v8"
+          "exec": "npm update @nikovirtala/projen-vitest @types/node commit-and-tag-version constructs jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii json-schema-to-typescript projen ts-node typescript vitest @biomejs/biome @vitest/coverage-v8"
         },
         {
           "exec": "npx projen"

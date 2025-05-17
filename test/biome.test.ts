@@ -4,9 +4,9 @@ import {
 	type TypeScriptProjectOptions,
 } from "projen/lib/typescript";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { describe, expect, it, test } from "vitest";
+import { describe, expect, it } from "vitest";
 import { Biome } from "../src";
-import type { Configuration } from "../src/biome-configuration";
+import type { IConfiguration } from "../src/biome-configuration";
 
 const getTestProject = (
 	projenOptions: Partial<TypeScriptProjectOptions>,
@@ -35,7 +35,7 @@ describe("biome", () => {
 				);
 			});
 
-			test("after biome", () => {
+			it("after biome", () => {
 				const project = getTestProject({ eslint: false });
 
 				new Biome(project);
@@ -127,7 +127,7 @@ describe("biome", () => {
 				formatter: true,
 			});
 
-			const config: Configuration = synthSnapshot(project)["biome.jsonc"];
+			const config: IConfiguration = synthSnapshot(project)["biome.jsonc"];
 			expect(config.formatter?.enabled).toBeTruthy();
 		});
 
@@ -137,7 +137,7 @@ describe("biome", () => {
 				organizeImports: true,
 			});
 
-			const config: Configuration = synthSnapshot(project)["biome.jsonc"];
+			const config: IConfiguration = synthSnapshot(project)["biome.jsonc"];
 			expect(config.organizeImports?.enabled).toBeTruthy();
 		});
 
@@ -152,14 +152,14 @@ describe("biome", () => {
 				},
 			});
 
-			const config: Configuration = synthSnapshot(project)["biome.jsonc"];
+			const config: IConfiguration = synthSnapshot(project)["biome.jsonc"];
 			expect(config.formatter?.enabled).toBeTruthy();
 			expect(config.files?.ignore).toContain("ignored-file.txt");
 		});
 	});
 
 	describe("of", () => {
-		test("returns Biome instance when found", () => {
+		it("returns Biome instance when found", () => {
 			const project = getTestProject({ eslint: false, prettier: false });
 			const biome = new Biome(project);
 
@@ -167,7 +167,7 @@ describe("biome", () => {
 			expect(found).toBe(biome);
 		});
 
-		test("returns undefined when not found", () => {
+		it("returns undefined when not found", () => {
 			const project = getTestProject({ eslint: false, prettier: false });
 			const found = Biome.of(project);
 			expect(found).toBeUndefined();

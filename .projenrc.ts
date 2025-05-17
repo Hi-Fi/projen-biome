@@ -2,6 +2,7 @@ import { Vitest } from "@nikovirtala/projen-vitest";
 import { cdk } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
 import { Biome } from "./src";
+import { createTypes } from "./src/schema";
 
 const project = new cdk.JsiiProject({
 	author: "Juho Saarinen",
@@ -17,9 +18,10 @@ const project = new cdk.JsiiProject({
 	depsUpgradeOptions: {
 		workflow: false,
 	},
+	bundledDeps: ["@biomejs/biome"],
 	deps: ["@biomejs/biome"],
 	devDeps: ["@nikovirtala/projen-vitest", "json-schema-to-typescript"],
-	peerDeps: ["@biomejs/biome", "projen", "constructs"],
+	peerDeps: ["projen", "constructs"],
 	jest: false,
 	// Use biome (this project) instead of eslint and prettier
 	eslint: false,
@@ -31,11 +33,11 @@ const project = new cdk.JsiiProject({
 	// packageName: undefined,  /* The "name" in package.json. */
 });
 
-const typesTask = project.addTask("parse-biome-types", {
-	exec: "npx --package=json-schema-to-typescript json2ts --input node_modules/@biomejs/biome/configuration_schema.json --output src/biome-configuration.ts",
-});
+// const typesTask = project.addTask("parse-biome-types", {
+// 	exec: "npx --package=json-schema-to-typescript json2ts --input node_modules/@biomejs/biome/configuration_schema.json --output src/biome-configuration.ts",
+// });
 
-project.defaultTask?.spawn(typesTask);
+// project.defaultTask?.spawn(typesTask);
 
 new Vitest(project);
 new Biome(project, {
@@ -47,5 +49,9 @@ new Biome(project, {
 		},
 	},
 });
+
+project.postSynthesize = async () => {
+	await createTypes();
+};
 
 project.synth();
