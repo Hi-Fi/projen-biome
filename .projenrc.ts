@@ -1,5 +1,6 @@
 import { Vitest } from "@nikovirtala/projen-vitest";
 import { cdk } from "projen";
+import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager } from "projen/lib/javascript";
 import { Biome } from "./src";
 import { createTypes } from "./src/schema";
@@ -26,6 +27,9 @@ const project = new cdk.JsiiProject({
 	// Use biome (this project) instead of eslint and prettier
 	eslint: false,
 	prettier: false,
+	projenCredentials: GithubCredentials.fromPersonalAccessToken({
+		secret: "GITHUB_TOKEN",
+	}),
 
 	// deps: [],                /* Runtime dependencies of this module. */
 	// description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
