@@ -54,4 +54,14 @@ project.postSynthesize = async () => {
 
 project.vscode?.extensions.addRecommendations('biomejs.biome')
 
+project.github?.actions.set(
+  'actions/upload-artifact',
+  'actions/upload-artifact@v4.6.2',
+)
+
+project.github?.actions.set(
+  'amannn/action-semantic-pull-request',
+  'amannn/action-semantic-pull-request@v5.5.3',
+)
+
 project.synth()
