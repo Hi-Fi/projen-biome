@@ -36,10 +36,7 @@ export class Biome extends Component {
       overrides: options.overrides,
     }
 
-    // Component itself already has Biome as dependency, so it can't be added as dev dependency
-    if (project.name !== 'projen-biome') {
-      project.addDevDeps(`@biomejs/biome@${this.optionsWithDefaults.version}`)
-    }
+    project.addDevDeps(`@biomejs/biome@${this.optionsWithDefaults.version}`)
 
     this.biomeConfiguration = createBiomeConfiguration(this.optionsWithDefaults)
 

@@ -19,8 +19,6 @@ const project = new cdk.JsiiProject({
   depsUpgradeOptions: {
     workflow: false,
   },
-  bundledDeps: ['@biomejs/biome'],
-  deps: ['@biomejs/biome'],
   devDeps: ['@nikovirtala/projen-vitest', 'json-schema-to-typescript', 'memfs'],
   peerDeps: ['projen', 'constructs'],
   jest: false,
@@ -36,12 +34,6 @@ const project = new cdk.JsiiProject({
   // devDeps: [],             /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
 })
-
-// const typesTask = project.addTask("parse-biome-types", {
-// 	exec: "npx --package=json-schema-to-typescript json2ts --input node_modules/@biomejs/biome/configuration_schema.json --output src/biome-configuration.ts",
-// });
-
-// project.defaultTask?.spawn(typesTask);
 
 new Vitest(project)
 new Biome(project, {
@@ -59,5 +51,7 @@ project.npmignore?.addPatterns('__mocks__')
 project.postSynthesize = async () => {
   await createTypes()
 }
+
+project.vscode?.extensions.addRecommendations('biomejs.biome')
 
 project.synth()

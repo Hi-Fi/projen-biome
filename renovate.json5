@@ -23,6 +23,7 @@
     }
   ],
   "ignoreDeps": [
+    "@biomejs/biome",
     "commit-and-tag-version",
     "constructs",
     "jsii-docgen",
