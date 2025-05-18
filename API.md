@@ -198,6 +198,7 @@ const biomeOptions: BiomeOptions = { ... }
 | --- | --- | --- |
 | <code><a href="#projen-biome.BiomeOptions.property.formatter">formatter</a></code> | <code>boolean</code> | Enable code formatter. |
 | <code><a href="#projen-biome.BiomeOptions.property.linter">linter</a></code> | <code>boolean</code> | Enable linting. |
+| <code><a href="#projen-biome.BiomeOptions.property.mergeArraysInConfiguration">mergeArraysInConfiguration</a></code> | <code>boolean</code> | Should arrays be merged or overwritten when creating Biome configuration. |
 | <code><a href="#projen-biome.BiomeOptions.property.organizeImports">organizeImports</a></code> | <code>boolean</code> | Enable import sorting/organizing. |
 | <code><a href="#projen-biome.BiomeOptions.property.overrides">overrides</a></code> | <code><a href="#projen-biome.IConfiguration">IConfiguration</a></code> | Full Biome configuration. |
 | <code><a href="#projen-biome.BiomeOptions.property.version">version</a></code> | <code>string</code> | Version of Biome to use. |
@@ -231,6 +232,21 @@ public readonly linter: boolean;
 Enable linting.
 
 Replaces Eslint.
+
+---
+
+##### `mergeArraysInConfiguration`<sup>Optional</sup> <a name="mergeArraysInConfiguration" id="projen-biome.BiomeOptions.property.mergeArraysInConfiguration"></a>
+
+```typescript
+public readonly mergeArraysInConfiguration: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Should arrays be merged or overwritten when creating Biome configuration.
+
+By default arrays are merged and duplicate values are removed
 
 ---
 

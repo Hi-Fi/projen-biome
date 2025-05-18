@@ -19,6 +19,7 @@ dist
 tsconfig.tsbuildinfo
 !.jsii
 /coverage/
+__mocks__
 /.gitattributes
 /.projenrc.ts
 /projenrc

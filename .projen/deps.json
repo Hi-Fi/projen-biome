@@ -46,6 +46,10 @@
       "type": "build"
     },
     {
+      "name": "memfs",
+      "type": "build"
+    },
+    {
       "name": "projen",
       "type": "build"
     },

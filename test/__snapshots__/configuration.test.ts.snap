@@ -1,0 +1,191 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Configuration > should match snapshot > without overrides > with all features 1`] = `
+{
+  "files": {
+    "ignore": [],
+    "ignoreUnknown": false,
+  },
+  "formatter": {
+    "attributePosition": "auto",
+    "bracketSpacing": true,
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "useEditorconfig": true,
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "attributePosition": "auto",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingCommas": "all",
+    },
+  },
+  "linter": {
+    "enabled": true,
+    "ignore": [
+      "**/*.js",
+      "**/*.d.ts",
+      "**/node_modules/",
+      "**/*.generated.ts",
+      "**/coverage",
+    ],
+    "rules": {
+      "complexity": {
+        "useLiteralKeys": "error",
+      },
+      "recommended": false,
+      "style": {
+        "useBlockStatements": "error",
+      },
+    },
+  },
+  "organizeImports": {
+    "enabled": true,
+  },
+  "overrides": [
+    {
+      "include": [],
+      "linter": {
+        "rules": {},
+      },
+    },
+  ],
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false,
+  },
+}
+`;
+
+exports[`Configuration > should match snapshot > without overrides > with formatter 1`] = `
+{
+  "files": {
+    "ignore": [],
+    "ignoreUnknown": false,
+  },
+  "formatter": {
+    "attributePosition": "auto",
+    "bracketSpacing": true,
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "useEditorconfig": true,
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "attributePosition": "auto",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingCommas": "all",
+    },
+  },
+  "linter": {
+    "enabled": false,
+  },
+  "organizeImports": {
+    "enabled": false,
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false,
+  },
+}
+`;
+
+exports[`Configuration > should match snapshot > without overrides > with import organizer 1`] = `
+{
+  "files": {
+    "ignore": [],
+    "ignoreUnknown": false,
+  },
+  "organizeImports": {
+    "enabled": true,
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false,
+  },
+}
+`;
+
+exports[`Configuration > should match snapshot > without overrides > with linter 1`] = `
+{
+  "files": {
+    "ignore": [],
+    "ignoreUnknown": false,
+  },
+  "linter": {
+    "enabled": true,
+    "ignore": [
+      "**/*.js",
+      "**/*.d.ts",
+      "**/node_modules/",
+      "**/*.generated.ts",
+      "**/coverage",
+    ],
+    "rules": {
+      "complexity": {
+        "useLiteralKeys": "error",
+      },
+      "recommended": false,
+      "style": {
+        "useBlockStatements": "error",
+      },
+    },
+  },
+  "organizeImports": {
+    "enabled": false,
+  },
+  "overrides": [
+    {
+      "include": [],
+      "linter": {
+        "rules": {},
+      },
+    },
+  ],
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false,
+  },
+}
+`;
+
+exports[`Configuration > should match snapshot > without overrides > without options 1`] = `
+{
+  "files": {
+    "ignore": [],
+    "ignoreUnknown": false,
+  },
+  "organizeImports": {
+    "enabled": false,
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false,
+  },
+}
+`;
