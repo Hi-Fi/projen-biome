@@ -46,6 +46,7 @@
     "jsii-pacmak": "^1.112.0",
     "jsii-rosetta": "~5.8.0",
     "json-schema-to-typescript": "^15.0.4",
+    "memfs": "^4.17.2",
     "projen": "^0.92.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",

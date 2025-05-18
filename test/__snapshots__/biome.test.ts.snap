@@ -941,14 +941,44 @@ exports[`biome > with default configuration > generates correct snapshot for > R
 
 exports[`biome > with default configuration > generates correct snapshot for > biome.jsonc 1`] = `
 {
-  "formatter": {
-    "enabled": false,
+  "files": {
+    "ignore": [],
+    "ignoreUnknown": false,
   },
   "linter": {
     "enabled": true,
+    "ignore": [
+      "**/*.js",
+      "**/*.d.ts",
+      "**/node_modules/",
+      "**/*.generated.ts",
+      "**/coverage",
+    ],
+    "rules": {
+      "complexity": {
+        "useLiteralKeys": "error",
+      },
+      "recommended": false,
+      "style": {
+        "useBlockStatements": "error",
+      },
+    },
   },
   "organizeImports": {
     "enabled": false,
+  },
+  "overrides": [
+    {
+      "include": [],
+      "linter": {
+        "rules": {},
+      },
+    },
+  ],
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false,
   },
 }
 `;

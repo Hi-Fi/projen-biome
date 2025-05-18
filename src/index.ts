@@ -1,147 +1,97 @@
-import { Component, JsonFile, ProjenrcFile } from "projen";
-import { Eslint, type NodeProject, Prettier } from "projen/lib/javascript";
-import { TypeScriptProject } from "projen/lib/typescript";
-import type { IConfiguration } from "./biome-configuration";
-export * from "./biome-configuration";
-
-export interface BiomeOptions {
-	/**
-	 * Version of Biome to use
-	 *
-	 * @default "^1"
-	 */
-	readonly version?: string;
-	/**
-	 * Enable linting. Replaces Eslint.
-	 *
-	 * @default true
-	 */
-	readonly linter?: boolean;
-	/**
-	 * Enable code formatter. Replaces mainly Prettier
-	 *
-	 * @default false
-	 */
-	readonly formatter?: boolean;
-	/**
-	 * Enable import sorting/organizing. Replaces mainly Prettier
-	 *
-	 * @default false
-	 */
-	readonly organizeImports?: boolean;
-	/**
-	 * Full Biome configuration. Note that this configuration dictates the final outcome is value is set.
-	 *
-	 * @example if linter is disabled on main level, it can be enabled on fullConfiguration.formatter.enabled.
-	 */
-	readonly overrides?: IConfiguration;
-}
+import { Component, JsonFile, ProjenrcFile } from 'projen'
+import { Eslint, type NodeProject, Prettier } from 'projen/lib/javascript'
+import { TypeScriptProject } from 'projen/lib/typescript'
+import { IConfiguration } from './biome-configuration'
+import { BiomeOptions, createBiomeConfiguration } from './configuration'
+export * from './biome-configuration'
+export { BiomeOptions } from './configuration'
 
 export class Biome extends Component {
-	public static of(project: NodeProject): Biome | undefined {
-		const isBiome = (c: Component): c is Biome => c instanceof Biome;
-		return project.components.find(isBiome);
-	}
+  public static of(project: NodeProject): Biome | undefined {
+    const isBiome = (c: Component): c is Biome => c instanceof Biome
+    return project.components.find(isBiome)
+  }
 
-	private readonly configFile: string;
-	private readonly version: string;
-	private readonly formatterEnabled: boolean;
-	private readonly linterEnabled: boolean;
-	private readonly importOrganizedEnabled: boolean;
+  private readonly configFile: string
+  private readonly optionsWithDefaults: BiomeOptions
+  private readonly biomeConfiguration: IConfiguration
+  private readonly projenrcFile?: string
 
-	constructor(project: NodeProject, options: BiomeOptions = {}) {
-		super(project);
-		this.configFile = "biome.jsonc";
-		this.version = options.version ?? "^1";
-		this.formatterEnabled = options.formatter ?? false;
-		this.linterEnabled = options.linter ?? true;
-		this.importOrganizedEnabled = options.organizeImports ?? false;
+  constructor(project: NodeProject, options: BiomeOptions = {}) {
+    super(project)
+    this.configFile = 'biome.jsonc'
+    this.projenrcFile = this.project.components.find(
+      (component) => component instanceof ProjenrcFile,
+    )?.filePath
+    this.optionsWithDefaults = {
+      mergeArraysInConfiguration: (options as Object).hasOwnProperty(
+        'mergeArraysInConfiguration',
+      )
+        ? options.mergeArraysInConfiguration
+        : true,
+      formatter: options.formatter ?? false,
+      linter: options.linter ?? true,
+      organizeImports: options.organizeImports ?? false,
+      version: options.version ?? '^1',
+      overrides: options.overrides,
+    }
 
-		if (project.name !== "projen-biome") {
-			project.addDevDeps(`@biomejs/biome@${this.version}`);
-		}
+    // Component itself already has Biome as dependency, so it can't be added as dev dependency
+    if (project.name !== 'projen-biome') {
+      project.addDevDeps(`@biomejs/biome@${this.optionsWithDefaults.version}`)
+    }
 
-		const biomeConfiguration = structuredClone(options.overrides ?? {});
+    this.biomeConfiguration = createBiomeConfiguration(this.optionsWithDefaults)
 
-		if (biomeConfiguration.formatter?.enabled === undefined) {
-			if (biomeConfiguration.formatter) {
-				biomeConfiguration.formatter.enabled = this.formatterEnabled;
-			} else {
-				biomeConfiguration.formatter = {
-					enabled: this.formatterEnabled,
-				};
-			}
-		}
+    new JsonFile(this, this.configFile, {
+      obj: this.biomeConfiguration,
+      committed: true,
+      allowComments: true,
+      marker: true,
+    })
 
-		if (biomeConfiguration.linter?.enabled === undefined) {
-			if (biomeConfiguration.linter) {
-				biomeConfiguration.linter.enabled = this.linterEnabled;
-			} else {
-				biomeConfiguration.linter = {
-					enabled: this.linterEnabled,
-				};
-			}
-		}
+    const localTask = this.createLocalBiomeTask()
+    project.testTask.spawn(localTask)
+  }
 
-		if (biomeConfiguration.organizeImports?.enabled === undefined) {
-			if (biomeConfiguration.organizeImports) {
-				biomeConfiguration.organizeImports.enabled =
-					this.importOrganizedEnabled;
-			} else {
-				biomeConfiguration.organizeImports = {
-					enabled: this.importOrganizedEnabled,
-				};
-			}
-		}
+  public override preSynthesize(): void {
+    super.preSynthesize()
 
-		new JsonFile(this, this.configFile, {
-			obj: biomeConfiguration,
-			committed: true,
-			allowComments: true,
-			marker: true,
-		});
+    for (const component of this.project.components) {
+      if (
+        component instanceof Eslint &&
+        this.biomeConfiguration.linter?.enabled
+      ) {
+        throw new Error('Biome linter should not be used together with Eslint')
+      }
+      if (
+        component instanceof Prettier &&
+        (this.biomeConfiguration.formatter?.enabled ||
+          this.biomeConfiguration.organizeImports?.enabled)
+      ) {
+        throw new Error(
+          'Biome formatter should not be used together with Prettier',
+        )
+      }
+    }
+  }
 
-		const localTask = this.createLocalBiomeTask();
-		project.testTask.spawn(localTask);
-	}
+  private createLocalBiomeTask() {
+    const targetDirs: string[] = []
+    this.projenrcFile && targetDirs.push(this.projenrcFile)
 
-	public override preSynthesize(): void {
-		super.preSynthesize();
+    if (this.project instanceof TypeScriptProject) {
+      targetDirs.push(this.project.srcdir)
+      targetDirs.push(this.project.testdir)
+    }
 
-		for (const component of this.project.components) {
-			if (component instanceof Eslint && this.linterEnabled) {
-				throw new Error("Biome linter should not be used together with Eslint");
-			}
-			if (
-				component instanceof Prettier &&
-				(this.formatterEnabled || this.importOrganizedEnabled)
-			) {
-				throw new Error(
-					"Biome formatter should not be used together with Prettier",
-				);
-			}
-		}
-	}
-
-	private createLocalBiomeTask() {
-		const targetDirs: string[] = [];
-		const projenrcFile = this.project.components.find(
-			(component) => component instanceof ProjenrcFile,
-		)?.filePath;
-		projenrcFile && targetDirs.push(projenrcFile);
-
-		if (this.project instanceof TypeScriptProject) {
-			targetDirs.push(this.project.srcdir);
-			targetDirs.push(this.project.testdir);
-		}
-
-		return this.project.addTask("biome", {
-			description: "Runs Biome against the codebase",
-			steps: [
-				{
-					exec: `biome check --write ${targetDirs.join(" ")}`,
-				},
-			],
-		});
-	}
+    return this.project.addTask('biome', {
+      description: 'Runs Biome against the codebase',
+      steps: [
+        {
+          exec: `biome check --write ${targetDirs.join(' ')}`,
+        },
+      ],
+    })
+  }
 }
