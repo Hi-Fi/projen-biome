@@ -1,3 +1,8 @@
+> [!IMPORTANT]  
+> As Projen has had support for Biome since version [0.92.11](https://github.com/projen/projen/releases/tag/v0.92.11), this separate component has became obsolete and repo has been archived.
+>
+> This is left to be visible to be an example of how to create a projen component.
+
 # Biome component for Projen NodeJS projects
 
 - [Biome](https://biomejs.dev/) 
